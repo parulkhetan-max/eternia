@@ -1,0 +1,161 @@
+---
+interface TitlePart {
+text: string;
+weight: number;
+}
+
+interface Slide {
+titleParts?: TitlePart[];
+title?: string;
+highlight?: string;
+description: string;
+buttonText: string;
+image: string;
+}
+
+const slides: Slide[] = [
+{
+titleParts: [
+{ text: "Imagine ", weight: 300 },
+{ text: "Windows.", weight: 700 },
+{ text: " Not ", weight: 300 },
+{ text: "Walls.", weight: 700 },
+],
+description: "Luxury aluminium windows and doors designed to bring in light, views and lasting strength.",
+buttonText: "Book a Window Consultation",
+image: "/src/assets/heroSlide-1.jpg"
+},
+{
+titleParts: [
+{ text: "Built To", weight: 300 },
+{ text: "Withstand.", weight: 700 },
+{ text: " Every ", weight: 300 },
+{ text: "Season.", weight: 700 },
+],
+description: "Experience the perfect blend of aesthetics and functionality with Eternia windows.",
+buttonText: "Explore Our Collections",
+image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&h=900&fit=crop"
+},
+{
+title: "Energy ",
+highlight: "Efficient. Future Ready.",
+description: "Advanced insulation technology for superior comfort and reduced energy costs.",
+buttonText: "Discover Innovation",
+image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&h=900&fit=crop"
+}
+];
+---
+
+<section class="relative w-full h-screen md:h-[650px] overflow-hidden flex items-center justify-center">
+    <!-- Slider Container -->
+    <div id="heroSlider" class="relative w-full h-full">
+        {slides.map((slide, index) => (
+        <div class={`absolute inset-0 w-full h-full bg-cover bg-center flex items-center justify-center transition-all
+            duration-700 ease-in-out ${ index===0 ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0' }`}
+            style={`background-image: url('${slide.image}');`}>
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="relative z-10 text-center text-white px-6">
+                <h1 class="drop-shadow-xl">
+                    {slide.titleParts ? (
+                        slide.titleParts.map((part) => (
+                            <span style={`font-weight: ${part.weight}`}>
+                                {part.text}
+                            </span>
+                        ))
+                    ) : (
+                        <>
+                            <span>{slide.title}</span>
+                            <span class="font-bold">{slide.highlight}</span>
+                        </>
+                    )}
+                </h1>
+                <p class="text-sm md:text-xl mb-[100px] text-white font-normal drop-shadow-xl">
+                    {slide.description}
+                </p>
+                <button
+                    class="inline-block text-white rounded-lg bg-[#C4C4C4]/10 backdrop-blur-md border border-white/50 transition-all duration-300 cursor-pointer"
+                    style="padding: 16px 20px;">
+                    {slide.buttonText}
+                </button>
+            </div>
+        </div>
+        ))}
+    </div>
+
+    <!-- Slider Indicators (Mobile Only) -->
+    <div class="md:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+        {slides.map((_, index) => (
+        <button class={`slider-indicator w-[6px] h-[6px] rounded-full transition-all duration-300 cursor-pointer scale-100 ${
+            index===0 ? 'bg-white scale-125 border border-white' : 'border border-white bg-transparent' }`} data-index={index}></button>
+        ))}
+    </div>
+</section>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#heroSlider > div');
+    const indicators = document.querySelectorAll('.slider-indicator');
+    const totalSlides = slides.length;
+    let autoplayInterval: ReturnType<typeof setInterval>;
+
+    function updateSlider(index: number) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.remove('translate-x-full', '-translate-x-full', 'opacity-0');
+                slide.classList.add('translate-x-0', 'opacity-100');
+            } else if (i < index) {
+                slide.classList.remove('translate-x-0', 'translate-x-full', 'opacity-100');
+                slide.classList.add('-translate-x-full', 'opacity-0');
+            } else {
+                slide.classList.remove('translate-x-0', '-translate-x-full', 'opacity-100');
+                slide.classList.add('translate-x-full', 'opacity-0');
+            }
+        });
+
+        indicators.forEach((indicator, i) => {
+            indicator.classList.remove('active', 'bg-white','border', 'scale-125');
+            indicator.classList.add('border-white', 'scale-100', 'border');
+            if (i === index) {
+                indicator.classList.add('active', 'bg-white', 'border', 'scale-125');
+                indicator.classList.remove('border-white', 'scale-100', 'border' );
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider(currentSlide);
+        resetAutoplay();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider(currentSlide);
+        resetAutoplay();
+    }
+
+    function goToSlide(index: number) {
+        currentSlide = index;
+        updateSlider(currentSlide);
+        resetAutoplay();
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+
+    function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+    });
+
+    updateSlider(0);
+
+    startAutoplay();
+</script>

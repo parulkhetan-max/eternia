@@ -1,11 +1,310 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/astro/Nav.astro";
+import HeroSlider from "../components/astro/HeroSlider.astro";
+import { FeaturesCarouselReact } from "../components/react/FeaturesCarouselReact";
+import { WhyChooseEterniaCarousel } from "../components/react/WhyChooseEterniaCarousel";
+import { WhereSpacesComeAlive } from "../components/react/WhereSpacesComeAlive";
+import { CraftedOrIconicSpaces } from "../components/react/CraftedOrIconicSpaces";
+import { CustomerTestimonials } from "../components/react/CustomerTestimonials";
+import { ExpertApprovedCarousel } from "../components/react/ExpertApprovedCarousel";
+import { CTASection } from "../components/react/CTASection";
+import { FAQSection } from "../components/react/FAQSection";
+import { Footer } from "../components/react/Footer";
 ---
 
 <Layout>
-	<Welcome />
+  <Nav />
+  
+  <HeroSlider />
+
+  <!-- Features Section with Carousel -->
+  <FeaturesCarouselReact 
+    client:load
+    title="Design. Performance. Longevity."
+    features={[
+      {
+        icon: '/src/assets/feature-icon1.svg',
+        title: "Energy Efficient",
+        description: "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
+        learnMoreLink: "#"
+      },
+	  {
+        icon: '/src/assets/feature-icon1.svg',
+        title: "Energy Efficient",
+        description: "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
+        learnMoreLink: "#"
+      },
+      {
+        icon: '/src/assets/feature-icon2.svg',
+        title: "Noise Insulation",
+        description: "Carefully engineered to significantly reduce external noise and create serene living spaces.",
+        learnMoreLink: "#"
+      },
+      {
+        icon: '/src/assets/feature-icon3.svg',
+        title: "Rainwater Insulation",
+        description: "Precision sealing systems prevent water ingress, even during intense monsoon conditions.",
+        learnMoreLink: "#"
+      },
+      {
+        icon: '/src/assets/feature-icon4.svg',
+        title: "Storm Resistant",
+        description: "Tested to endure high wind loads and extreme weather with lasting reliable strength.",
+        learnMoreLink: "#"
+      }
+    ]}
+  />
+
+  <!-- Why Choose Eternia Section -->
+  <WhyChooseEterniaCarousel
+    client:load
+    items={[
+      {
+        icon: '/src/assets/why-icon1.svg',
+        title: "MADE WITH DURANIUM",
+        subtitle: "Stronger. Sleeker. Smarter.",
+        points: [
+          "Patented alloy, 40% stronger than standard aluminium",
+          "Enables larger windows with slimmer profiles",
+          "Cyclone-tested for extreme durability & reliability"
+        ]
+      },
+      {
+        icon: '/src/assets/why-icon2.svg',
+        title: "W/WA CERTIFIED SAFETY",
+        subtitle: "Tested. Trusted. Strong.",
+        points: [
+          "Windows tested for wind, water, and air performance",
+          "Leak-proof, rattle-free & weather-resistant Windows",
+          "Transparent scoring system for consumer confidence"
+        ]
+      },
+      {
+        icon: '/src/assets/why-icon3.svg',
+        title: "SUSTAINABILITY",
+        subtitle: "Assured Service Guarantee",
+        points: [
+          "12-Year Warranty",
+          "Dedicated 7-Day Call Center for support",
+          "Rigorous post-installation checks for complete satisfaction"
+        ]
+      },
+      {
+        icon: '/src/assets/why-icon4.svg',
+        title: "ETERNIA CARE",
+        subtitle: "Greener Homes Promise",
+        points: [
+          "Aluminium – the world's only eternally recyclable material",
+          "GreenPro Certified products for a greener future",
+          "Sustainable production processes for eco-conscious living"
+        ]
+      }
+    ]}
+  />
+
+  <!-- Where Spaces Come Alive Section -->
+  <WhereSpacesComeAlive
+    client:load
+    title="Where Spaces Come Alive"
+    beforeImage="/src/assets/image 103.jpg"
+    afterImage="/src/assets/image 104.jpg"
+    viewAllLink="#"
+  />
+
+  <!-- Crafted or Iconic Spaces Section -->
+  <CraftedOrIconicSpaces
+    client:load
+    title="Crafted or Iconic Spaces"
+    spaces={[
+      {
+        image: '/src/assets/space1.jpg',
+        icon: '/src/assets/icon-1.svg',
+        title: 'Rumrail Nirvana',
+        description: '54 Storey Luxury Tower'
+      },
+      {
+        image: '/src/assets/space2.jpg',
+        icon: '/src/assets/icon-2.svg',
+        title: 'Rustumjee Reserve',
+        description: '32 Storey High-Rise Tower'
+      },
+      {
+        image: '/src/assets/space3.jpg',
+        icon: '/src/assets/icon-3.svg',
+        title: 'L&T Seawoods',
+        description: '40 acre Development'
+      },
+      {
+        image: '/src/assets/space4.jpg',
+        icon: '/src/assets/icon-4.svg',
+        title: 'Birla Varya',
+        description: '53 Storeys Tower'
+      }
+    ]}
+  />
+
+  <!-- Customer Testimonials Section -->
+  <CustomerTestimonials
+    client:load
+    title="What Our Customers Have to Say"
+    testimonials={[
+      {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+      {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+      {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+	  {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+	  {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+	  {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+	  {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      },
+      {
+        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
+        author: 'Mr. Vinod Mittal',
+        role: ''
+      }
+    ]}
+    exploreMoreLink="#"
+  />
+  <!--  -->
+   <CraftedOrIconicSpaces
+    client:load
+    title="Thoughtful Reads for Modern Living"
+    spaces={[
+      {
+        image: '/src/assets/living1.jpg',
+        icon: '/src/assets/icon-1.svg',
+        title: 'Rumrail Nirvana',
+        description: '54 Storey Luxury Tower'
+      },
+      {
+        image: '/src/assets/living2.jpg',
+        icon: '/src/assets/icon-2.svg',
+        title: 'Rustumjee Reserve',
+        description: '32 Storey High-Rise Tower'
+      },
+      {
+        image: '/src/assets/living3.jpg',
+        icon: '/src/assets/icon-3.svg',
+        title: 'L&T Seawoods',
+        description: '40 acre Development'
+      },
+      {
+        image: '/src/assets/living4.jpg',
+        icon: '/src/assets/icon-4.svg',
+        title: 'Birla Varya',
+        description: '53 Storeys Tower'
+      }
+    ]}
+  />
+
+  <!-- Expert Approved Performance Section -->
+  <ExpertApprovedCarousel
+    client:load
+    title="Expert-Approved Performance"
+    testimonials={[
+      {
+        image: '/src/assets/placeholder.jpg',
+        videoThumbnail: '/src/assets/video1.jpg',
+        videoLink: 'https://youtube.com/watch?v=video1',
+        name: 'Ms Vidi Dugg',
+        title: 'Noise & leak proof',
+        instagram: 'https://instagram.com/'
+      },
+      {
+        image: '/src/assets/placeholder.jpg',
+        videoThumbnail: '/src/assets/video2.jpg',
+        videoLink: 'https://youtube.com/watch?v=video2',
+        name: 'Ms Ridhi Khosla Jalan',
+        title: 'Which Window?',
+        instagram: 'https://instagram.com/'
+      },
+      {
+        image: '/src/assets/placeholder.jpg',
+        videoThumbnail: '/src/assets/video3.jpg',
+        videoLink: 'https://youtube.com/watch?v=video3',
+        name: 'Mr Krsna Mehta',
+        title: 'Weather Proof',
+        instagram: 'https://instagram.com/'
+      },
+      {
+        image: '/src/assets/placeholder.jpg',
+        videoThumbnail: '/src/assets/video4.jpg',
+        videoLink: 'https://youtube.com/watch?v=video4',
+        name: 'Ms Prohina',
+        title: 'Design Expert',
+        instagram: 'https://instagram.com/'
+      },
+      {
+        image: '/src/assets/placeholder.jpg',
+        videoThumbnail: '/src/assets/video3.jpg',
+        videoLink: 'https://youtube.com/watch?v=video5',
+        name: 'Mr Arjun Gandhi',
+        title: 'Performance',
+        instagram: 'https://instagram.com/'
+      }
+    ]}
+  />
+
+  <!-- CTA Section -->
+  <CTASection
+    client:load
+    title="Explore the Windows That Mirror You!"
+    buttonText="Connect with Design Experts"
+    buttonLink="#"
+    backgroundImage="/src/assets/cta-bg.jpg"
+  />
+
+  <!-- FAQ Section -->
+  <FAQSection
+    client:load
+    title="Frequently Asked Questions"
+    faqs={[
+      {
+        question: "What are the different windows offered by Eternia?",
+        answer: "Eternia offers aluminium windows and doors of every type, size and colour. Our main offerings include: Sliding aluminium windows and doors, Openable/casement aluminium windows and doors. We also offer aluminium windows and doors for all rooms, including living rooms, kitchens and bedrooms. Our aluminium windows and doors can be classified into Duraslim Edge, Duraslim and Essentials - which are three ranges of high-quality products designed to ensure that every Indian home can have true aluminium windows."
+      },
+      {
+        question: "Which window is better for me: aluminium, wood or uPVC?",
+        answer: "Each material has its own advantages. Aluminium windows offer durability, low maintenance, and modern aesthetics. Wood provides a classic look but requires more maintenance. uPVC is cost-effective and energy-efficient. We recommend consulting with our design experts to determine which option best suits your needs and preferences."
+      },
+      {
+        question: "Do you manufacture aluminium windows and doors?",
+        answer: "Yes, we manufacture high-quality aluminium windows and doors using advanced technology and premium materials. Our manufacturing process ensures superior quality and durability that meets international standards."
+      },
+      {
+        question: "What are the different colours you offer in aluminium windows?",
+        answer: "We offer a wide range of colours and finishes for our aluminium windows including natural silver, bronze, black, white, and custom colour options. Our powder-coated finishes provide excellent durability and aesthetic appeal."
+      }
+    ]}
+  />
+
+  <Footer client:load />
+
 </Layout>

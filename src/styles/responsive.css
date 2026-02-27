@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+    #navbar.navbar-blurred{
+        background: #fff !important;
+    }
+    #navbar{
+    padding: 14px 16px;
+}
+}

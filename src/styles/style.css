@@ -1,0 +1,44 @@
+/* Navbar text color transitions */
+#navbar{
+    padding: 18px 40px;
+}
+.navbar-text {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar-scrolled .navbar-text {
+    color: var(--color-green) !important;
+}
+
+.navbar-scrolled .navbar-button {
+    background-color: var(--color-green) !important;
+    color: var(--color-white) !important;
+}
+
+/* Navbar blur and inner shadow effect */
+#navbar.navbar-blurred {
+    /* box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2); */
+    box-shadow: 0px 0.5px 19.94px 0px #E3DEFF1A inset;
+
+    box-shadow: 0px 1.99px 8.97px 0px #E3DEFF1A inset;
+
+    box-shadow: 0px 48.85px 49.84px -23.93px #E3DEFF33 inset;
+
+    box-shadow: 0px -40.87px 33.89px -31.9px #E3DEFF33 inset;
+
+    box-shadow: 0px 3.49px 5.48px -1.99px #FFFFFF33 inset;
+
+    box-shadow: 0px 0px 20px 9px #FFFFFF1A inset;
+    backdrop-filter: blur(49.84375762939453px)
+}
+
+#navbar.navbar-scrolled {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+/* feature carousal */
+
+#featuresCarousel #carouselPrev{
+    bottom:-30px;
+    left: 40%;
+}
