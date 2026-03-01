@@ -21,6 +21,36 @@ export function ExpertApprovedCarousel({
 }: ExpertApprovedCarouselProps) {
     const [currentIndex, setCurrentIndex] = React.useState(0)
     const [isAnimating, setIsAnimating] = React.useState(false)
+    const [screenSize, setScreenSize] = React.useState<"mobile" | "tablet" | "desktop">("mobile")
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        // Set initial screen size
+        const width = window.innerWidth
+        if (width < 769) {
+            setScreenSize("mobile")
+        } else if (width < 1025) {
+            setScreenSize("tablet")
+        } else {
+            setScreenSize("desktop")
+        }
+        setMounted(true)
+
+        // Handle resize
+        const handleResize = () => {
+            const width = window.innerWidth
+            if (width < 769) {
+                setScreenSize("mobile")
+            } else if (width < 1025) {
+                setScreenSize("tablet")
+            } else {
+                setScreenSize("desktop")
+            }
+        }
+
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
 
     const moveCarousel = (direction: "left" | "right") => {
         if (isAnimating) return
@@ -60,42 +90,87 @@ export function ExpertApprovedCarousel({
     }
 
     return (
-        <div className="py-24 bg-white">
+        <div className="py-12 sm:py-24 bg-[var(--color-blue-light)]">
             <div className="container-flex">
-                <div className="text-center mb-20">
+                <div className="text-center mb-8 sm:mb-16">
                     <h2 className="text-[var(--color-green)] mb-6">{title}</h2>
                     <hr className="border-[var(--color-green)] mb-4 w-[40%] mx-auto" />
                 </div>
 
-                <div className="relative w-full py-10">
-                    <div className="relative h-96 flex items-center justify-center overflow-visible p-20">
+                <div className="relative w-full pt-10">
+                    <div className="relative h-80 sm:h-96 flex items-center justify-center overflow-visible p-4 sm:p-10 md:p-20">
                         <div className="relative w-full h-full flex items-center justify-center">
-                            {testimonials.map((testimonial, index) => {
+                            {mounted && testimonials.map((testimonial, index) => {
                                 const position = getCardPosition(index)
                                 let transform = "scale(0.7) translateX(0)"
                                 let opacity = 0
                                 let zIndex = 0
 
-                                if (position === 0) {
-                                    transform = "scale(1) translateX(0)"
-                                    opacity = 1
-                                    zIndex = 30
-                                } else if (position === -1) {
-                                    transform = "scale(0.85) translateX(-220px)"
-                                    opacity = 0.9
-                                    zIndex = 20
-                                } else if (position === 1) {
-                                    transform = "scale(0.85) translateX(220px)"
-                                    opacity = 0.9
-                                    zIndex = 20
-                                } else if (position === 2) {
-                                    transform = "scale(0.75) translateX(420px)"
-                                    opacity = 0.9
-                                    zIndex = 10
-                                } else if (position === -2) {
-                                    transform = "scale(0.75) translateX(-420px)"
-                                    opacity = 0.9
-                                    zIndex = 10
+                                // Mobile (< 768px)
+                                if (screenSize === "mobile") {
+                                    if (position === 0) {
+                                        transform = "scale(1) translateX(0)"
+                                        opacity = 1
+                                        zIndex = 30
+                                    } else if (position === -1) {
+                                        transform = "scale(0.85) translateX(-40%)"
+                                        opacity = 0.9
+                                        zIndex = 20
+                                    } else if (position === 1) {
+                                        transform = "scale(0.85) translateX(40%)"
+                                        opacity = 0.9
+                                        zIndex = 20
+                                    } else if (position === 2 || position === -2) {
+                                        transform = "scale(0.75) translateX(0)"
+                                        opacity = 0
+                                        zIndex = 10
+                                    }
+                                } else if (screenSize === "tablet") {
+                                    // Tablet (768px - 1024px - 4 cards visible)
+                                    if (position === 0) {
+                                        transform = "scale(1) translateX(0)"
+                                        opacity = 1
+                                        zIndex = 30
+                                    } else if (position === -1) {
+                                        transform = "scale(0.88) translateX(-60%)"
+                                        opacity = 0.9
+                                        zIndex = 20
+                                    } else if (position === 1) {
+                                        transform = "scale(0.88) translateX(60%)"
+                                        opacity = 0.9
+                                        zIndex = 20
+                                    } else if (position === 2) {
+                                        transform = "scale(0.78) translateX(120%)"
+                                        opacity = 0.85
+                                        zIndex = 10
+                                    } else if (position === -2) {
+                                        transform = "scale(0.78) translateX(-120%)"
+                                        opacity = 0.85
+                                        zIndex = 10
+                                    }
+                                } else {
+                                    // Desktop (>= 1024px)
+                                    if (position === 0) {
+                                        transform = "scale(1) translateX(0)"
+                                        opacity = 1
+                                        zIndex = 30
+                                    } else if (position === -1) {
+                                        transform = "scale(0.85) translateX(102%)"
+                                        opacity = 0.9
+                                        zIndex = 20
+                                    } else if (position === 1) {
+                                        transform = "scale(0.85) translateX(-102%)"
+                                        opacity = 0.9
+                                        zIndex = 20
+                                    } else if (position === 2) {
+                                        transform = "scale(0.75) translateX(215%)"
+                                        opacity = 0.9
+                                        zIndex = 10
+                                    } else if (position === -2) {
+                                        transform = "scale(0.75) translateX(-215%)"
+                                        opacity = 0.9
+                                        zIndex = 10
+                                    }
                                 }
 
                                 return (
@@ -108,7 +183,7 @@ export function ExpertApprovedCarousel({
                                             zIndex,
                                         }}
                                     >
-                                        <div className="relative w-72 h-full rounded-2xl overflow-hidden shadow-2xl group">
+                                        <div className="relative w-56 sm:w-64 md:w-72 h-full rounded-2xl overflow-hidden shadow-2xl group">
                                             <img
                                                 src={testimonial.videoThumbnail}
                                                 alt={testimonial.name}
@@ -182,11 +257,11 @@ export function ExpertApprovedCarousel({
                     <div className="flex justify-center items-center gap-8 mt-20">
                         <button
                             onClick={() => moveCarousel("left")}
-                            className="relative static translate-y-0 bg-white rounded-full border-transparent w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors duration-300"
+                            className="relative static translate-y-0 bg-[var(--color-green)] rounded-full border-transparent w-10 h-10 flex items-center justify-center transition-colors duration-300"
                             aria-label="Previous slide"
                         >
                             <svg
-                                className="w-5 h-5 text-[var(--color-green)]"
+                                className="w-5 h-5 text-[var(--color-white)]"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -203,7 +278,7 @@ export function ExpertApprovedCarousel({
                                     onClick={() => goToSlide(index)}
                                     className={`transition-all duration-300 rounded-full ${index === currentIndex
                                             ? "bg-[var(--color-green)] w-3 h-3"
-                                            : "bg-[var(--color-green)]/30 w-2 h-2 hover:bg-[var(--color-green)]/60"
+                                            : "bg-transparent border border-[var(--color-green)] w-2 h-2"
                                         }`}
                                     aria-label={`Go to slide ${index + 1}`}
                                     aria-current={index === currentIndex ? "true" : "false"}
@@ -213,11 +288,11 @@ export function ExpertApprovedCarousel({
 
                         <button
                             onClick={() => moveCarousel("right")}
-                            className="relative static translate-y-0 bg-white rounded-full border-transparent w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors duration-300"
+                            className="relative static translate-y-0 bg-[var(--color-green)] rounded-full border-transparent w-10 h-10 flex items-center justify-center transition-colors duration-300"
                             aria-label="Next slide"
                         >
                             <svg
-                                className="w-5 h-5 text-[var(--color-green)]"
+                                className="w-5 h-5 text-[var(--color-white)]"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"

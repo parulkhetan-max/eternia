@@ -43,9 +43,9 @@ export function CustomerTestimonials({
   }, [api])
 
   return (
-    <div className="py-24 bg-[var(--color-green)]">
+    <div className="pb-12 sm:pb-24 bg-[var(--color-green)]">
          {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-white">
             {title}
           </h2>
@@ -61,13 +61,13 @@ export function CustomerTestimonials({
           setApi={setApi}
           className="w-full"
         >
-          <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-8">
+          <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-3">
             {testimonials.map((testimonial, index) => (
               <CarouselItem
                 key={index}
-                className="pl-4 md:pl-6 lg:pl-8 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                className="pl-4 md:pl-3 lg:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
-                <div className="h-full p-6 rounded-lg border border-white/30 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/60 hover:bg-white/10 hover:scale-105 hover:z-10">
+                <div className="h-full p-6 rounded-lg border border-white/30 bg-white/5 backdrop-blur-sm transition-all duration-300 ">
                   {/* Quote Icon */}
                   <div className="mb-4 text-5xl text-white/40">
                   <img src="/src/assets/left-quote.svg" alt="" /></div>
@@ -78,11 +78,13 @@ export function CustomerTestimonials({
                   </p>
 
                   {/* Divider */}
-                  <div className="w-full h-0.5 bg-white/10 mb-4" />
+                  <div>
+                    <img src="/src/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
+                  </div>
 
                   {/* Author */}
                   <div>
-                    <p className="font-bold text-white text-sm">
+                    <p className="font-medium text-white text-sm mb-0">
                       {testimonial.author}
                     </p>
                     {testimonial.role && (
@@ -106,10 +108,10 @@ export function CustomerTestimonials({
                 <button
                   key={index}
                   onClick={() => api?.scrollTo(index)}
-                  className={`rounded-full transition-all duration-300 ${
+                   className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-white)] ${
                     index + 1 === current
-                      ? "bg-white w-3 h-3"
-                      : "bg-white/40 w-2 h-2 hover:bg-white/60"
+                      ? "bg-[var(--color-white)]"
+                      : "bg-transparent"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

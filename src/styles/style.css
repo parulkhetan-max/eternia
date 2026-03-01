@@ -1,7 +1,8 @@
 /* Navbar text color transitions */
-#navbar{
+#navbar {
     padding: 18px 40px;
 }
+
 .navbar-text {
     color: white;
     transition: color 0.3s ease;
@@ -36,9 +37,57 @@
 #navbar.navbar-scrolled {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
+
 /* feature carousal */
 
-#featuresCarousel #carouselPrev{
-    bottom:-30px;
+#featuresCarousel #carouselPrev {
+    bottom: -30px;
     left: 40%;
+}
+
+.modern-living .icon,
+.crafted-iconic .read-more,
+.crafted-iconic .explore-more,
+.modern-living .indicators {
+    display: none;
+}
+.modern-living .crafted-iconic-content{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.crafted-iconic .crafted-iconic-content {
+    margin: 16px;
+}
+/* Innovation Meets Precision Styles */
+.innovation_box_main{
+  padding-top: 40px;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+}
+.home-section-c{
+  background-image: url('/src/assets/innovationBG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.home-section-c-big-image-box-mob{
+  max-width: 318px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.main_image_big {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.home-section-c-big-image-box {
+  margin: 90px 0;
+  width: 100%;
+  max-width: 1256px;
+  position: relative;
 }

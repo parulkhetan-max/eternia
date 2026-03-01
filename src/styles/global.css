@@ -8,7 +8,7 @@
     --color-green: #003946;
     --color-dark: #282828;
     --color-gray-light: #E3DEFF;
-    
+
     /* Default Variables */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.6%;
@@ -223,6 +223,7 @@
 }
 
 @layer components {
+
   /* Flexible Container - Responsive with max-width of 1240px */
   .container-flex {
     width: 100%;
@@ -232,87 +233,41 @@
     padding-right: 1rem;
     max-width: 1240px;
   }
-  
+
   @media (min-width: 640px) {
     .container-flex {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
-  
+
   @media (min-width: 768px) {
     .container-flex {
       padding-left: 2rem;
       padding-right: 2rem;
     }
   }
-  
+
   @media (min-width: 1024px) {
-    .container-flex {
+    /* .container-flex {
       padding-left: 0rem;
       padding-right: 0rem;
-    }
+    } */
   }
-  
+
   /* Full width with padding */
   .container-full {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   @media (min-width: 640px) {
     .container-full {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
-  
-  /* Smaller container for content sections */
-  /* .container-content {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 1000px;
-  }
-  
-  @media (min-width: 640px) {
-    .container-content {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container-content {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  } */
-  
-  /* Extra large container */
-  /* .container-xl {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 1400px;
-  }
-  
-  @media (min-width: 640px) {
-    .container-xl {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container-xl {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  } */
+
 }
+

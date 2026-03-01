@@ -9,7 +9,6 @@ titleParts?: TitlePart[];
 title?: string;
 highlight?: string;
 description: string;
-buttonText: string;
 image: string;
 }
 
@@ -22,7 +21,6 @@ titleParts: [
 { text: "Walls.", weight: 700 },
 ],
 description: "Luxury aluminium windows and doors designed to bring in light, views and lasting strength.",
-buttonText: "Book a Window Consultation",
 image: "/src/assets/heroSlide-1.jpg"
 },
 {
@@ -32,16 +30,26 @@ titleParts: [
 { text: " Every ", weight: 300 },
 { text: "Season.", weight: 700 },
 ],
-description: "Experience the perfect blend of aesthetics and functionality with Eternia windows.",
-buttonText: "Explore Our Collections",
-image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&h=900&fit=crop"
+description: "Storm resistant and leak proof windows engineered to perform in extreme Indian weather conditions.",
+image: "/src/assets/heroSlide-2.jpg"
 },
 {
-title: "Energy ",
-highlight: "Efficient. Future Ready.",
-description: "Advanced insulation technology for superior comfort and reduced energy costs.",
-buttonText: "Discover Innovation",
-image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&h=900&fit=crop"
+titleParts: [
+{ text: "Quiet", weight: 300 },
+{ text: "Homes.", weight: 700 },
+{ text: " Cleaner ", weight: 300 },
+{ text: "Interiors.", weight: 700 },
+],
+description: "Noise proof, dust proof windows that help you enjoy a calmer living experience.",
+image: "/src/assets/heroSlide-3.jpg"
+},
+{
+titleParts: [
+{ text: "Designed to Match", weight: 300 },
+{ text: "Your Style", weight: 700 },
+],
+description: "Luxury aluminium windows available in a range of finishes and configurations.",
+image: "/src/assets/heroSlide-4.jpg"
 }
 ];
 ---
@@ -74,8 +82,8 @@ image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&h=900&f
                 </p>
                 <button
                     class="inline-block text-white rounded-lg bg-[#C4C4C4]/10 backdrop-blur-md border border-white/50 transition-all duration-300 cursor-pointer"
-                    style="padding: 16px 20px;">
-                    {slide.buttonText}
+                    style="padding: 10px 20px;">
+                    Book a Window Consultation
                 </button>
             </div>
         </div>

@@ -11,6 +11,7 @@ import { ExpertApprovedCarousel } from "../components/react/ExpertApprovedCarous
 import { CTASection } from "../components/react/CTASection";
 import { FAQSection } from "../components/react/FAQSection";
 import { Footer } from "../components/react/Footer";
+import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPrecision";
 ---
 
 <Layout>
@@ -23,12 +24,6 @@ import { Footer } from "../components/react/Footer";
     client:load
     title="Design. Performance. Longevity."
     features={[
-      {
-        icon: '/src/assets/feature-icon1.svg',
-        title: "Energy Efficient",
-        description: "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
-        learnMoreLink: "#"
-      },
 	  {
         icon: '/src/assets/feature-icon1.svg',
         title: "Energy Efficient",
@@ -48,6 +43,12 @@ import { Footer } from "../components/react/Footer";
         learnMoreLink: "#"
       },
       {
+        icon: '/src/assets/feature-icon1.svg',
+        title: "Energy Efficient",
+        description: "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
+        learnMoreLink: "#"
+      },
+      {
         icon: '/src/assets/feature-icon4.svg',
         title: "Storm Resistant",
         description: "Tested to endure high wind loads and extreme weather with lasting reliable strength.",
@@ -56,6 +57,49 @@ import { Footer } from "../components/react/Footer";
     ]}
   />
 
+  <!-- Innovation Meets Precision Section -->
+  <InnovationMeetsPrecision
+    client:load
+    title="When Innovation Meets Perfection"
+    mainImage="/src/assets/image 136.png"
+    features={[
+      { id: "storm", label: "Storm Proof Strength", desc: "Designed to withstand cyclonic winds", position: "storm", width: "auto", carouselGroup: 1 },
+      { id: "wider", label: "Wider Views", desc: "Larger panel sizes", position: "wider", width: "auto", carouselGroup: 1 },
+      { id: "rattle", label: "No Rattling", desc: "Sturdy quality accessories & woolpile", position: "rattle", width: "auto", carouselGroup: 1 },
+      { id: "noise", label: "Noise Insulation", desc: "High-quality gaskets with fin-based woolpile", position: "noise", width: "199px", carouselGroup: 1 },
+      { id: "rugged", label: "Rugged Reliability", desc: "40% stronger than standard aluminium", position: "rugged", width: "auto", carouselGroup: 1 },
+      { id: "security", label: "Enhanced Security", desc: "Multi-point locking mechanisms for added protection", position: "security", width: "234px", carouselGroup: 2 },
+      { id: "drips", label: "No Drips or Leaks", desc: "Efficient and intelligent water drainage system", position: "drips", width: "auto", carouselGroup: 2 },
+      { id: "peace", label: "Peace of Mind", desc: "12-year warranty on aluminium profiles + 5-year warranty on hardware", position: "peace", width: "260px", carouselGroup: 2 },
+      { id: "indian", label: "Made for Indian Conditions", desc: "Collapsible intergrated pest mesh", position: "indian", width: "240px", carouselGroup: 2 },
+      { id: "smooth", label: "Smooth Operation", desc: "1L+ Cycle tested rollers & hinges", position: "smooth", width: "220px", carouselGroup: 2 },
+      { id: "sealing", label: "High Quality Sealing", desc: "Silicated fin-based woolpile blocks water, dust, and sound", position: "sealing", width: "267px", carouselGroup: 2 },
+    ]}
+    carouselSlides={[
+      {
+        image: "/src/assets/image013601.png",
+        features: [
+          { id: "storm", label: "Storm Proof Strength", desc: "Designed to withstand cyclonic winds", position: "storm", width: "220px", carouselGroup: 1 },
+          { id: "wider", label: "Wider Views", desc: "Larger panel sizes", position: "wider", width: "auto", carouselGroup: 1 },
+          { id: "rugged", label: "Rugged Reliability", desc: "40% stronger than standard aluminium", position: "rugged", width: "100%", carouselGroup: 1 },
+          { id: "security", label: "Enhanced Security", desc: "Multi-point locking mechanisms", position: "security", width: "200px", carouselGroup: 1 },
+          { id: "indian", label: "Made for Indian Conditions", desc: "Collapsible intergrated pest mesh", position: "indian", width: "240px", carouselGroup: 1 },
+          { id: "smooth", label: "Smooth Operation", desc: "1L+ Cycle tested rollers & hinges", position: "smooth", width: "100%", carouselGroup: 1 },
+        ]
+      },
+      {
+        image: "/src/assets/image013601.png",
+        features: [
+          { id: "noise", label: "Noise Insulation", desc: "High quality gaskets & fin based woolpile", position: "noise", width: "240px", carouselGroup: 2 },
+          { id: "drips", label: "No Drips or Leaks", desc: "Efficient water drainage system", position: "drips", width: "210px", carouselGroup: 2 },
+          { id: "rattle", label: "No Rattling", desc: "Sturdy quality accessories & woolpile", position: "rattle", width: "200px", carouselGroup: 2 },
+          { id: "peace", label: "Peace of Mind", desc: "12 year brand warranty on profiles + 5 years warranty on hardware", position: "peace", width: "160px", carouselGroup: 2 },
+          { id: "", label: "", desc: "", position: "indian", width: "", carouselGroup: 2 },
+          { id: "sealing", label: "High Quality Sealing", desc: "Silcated fin-based wool pile to block out water, dust & sound", position: "sealing", width: "250px", carouselGroup: 2 },
+        ]
+      }
+    ]}
+  />
   <!-- Why Choose Eternia Section -->
   <WhyChooseEterniaCarousel
     client:load
@@ -107,42 +151,49 @@ import { Footer } from "../components/react/Footer";
   <WhereSpacesComeAlive
     client:load
     title="Where Spaces Come Alive"
-    beforeImage="/src/assets/image 103.jpg"
-    afterImage="/src/assets/image 104.jpg"
+    beforeImage="/src/assets/image 127.webp"
+    afterImage="/src/assets/image 134.jpg"
     viewAllLink="#"
   />
 
   <!-- Crafted or Iconic Spaces Section -->
-  <CraftedOrIconicSpaces
+<div class="crafted-iconic">
+    <CraftedOrIconicSpaces
     client:load
     title="Crafted or Iconic Spaces"
     spaces={[
       {
-        image: '/src/assets/space1.jpg',
-        icon: '/src/assets/icon-1.svg',
+        image: '/src/assets/iconic_img3.jpg',
+        icon: '/src/assets/Ellipse1.svg',
         title: 'Rumrail Nirvana',
         description: '54 Storey Luxury Tower'
       },
       {
-        image: '/src/assets/space2.jpg',
-        icon: '/src/assets/icon-2.svg',
+        image: '/src/assets/iconic_img2.jpg',
+        icon: '/src/assets/Ellipse2.svg',
         title: 'Rustumjee Reserve',
-        description: '32 Storey High-Rise Tower'
+        description: '22 Storey High-Rise Tower'
       },
       {
-        image: '/src/assets/space3.jpg',
-        icon: '/src/assets/icon-3.svg',
+        image: '/src/assets/iconic_img3.jpg',
+        icon: '/src/assets/Ellipse3.svg',
         title: 'L&T Seawoods',
         description: '40 acre Development'
       },
       {
-        image: '/src/assets/space4.jpg',
-        icon: '/src/assets/icon-4.svg',
+        image: '/src/assets/iconic_img2.jpg',
+        icon: '/src/assets/Ellipse4.svg',
         title: 'Birla Varya',
-        description: '53 Storeys Tower'
+        description: '23 Storeys Tower',
+      },{
+        image: '/src/assets/iconic_img3.jpg',
+        icon: '/src/assets/Ellipse1.svg',
+        title: 'Rumrail Nirvana',
+        description: '54 Storey Luxury Tower'
       }
     ]}
   />
+</div>
 
   <!-- Customer Testimonials Section -->
   <CustomerTestimonials
@@ -192,37 +243,6 @@ import { Footer } from "../components/react/Footer";
     ]}
     exploreMoreLink="#"
   />
-  <!--  -->
-   <CraftedOrIconicSpaces
-    client:load
-    title="Thoughtful Reads for Modern Living"
-    spaces={[
-      {
-        image: '/src/assets/living1.jpg',
-        icon: '/src/assets/icon-1.svg',
-        title: 'Rumrail Nirvana',
-        description: '54 Storey Luxury Tower'
-      },
-      {
-        image: '/src/assets/living2.jpg',
-        icon: '/src/assets/icon-2.svg',
-        title: 'Rustumjee Reserve',
-        description: '32 Storey High-Rise Tower'
-      },
-      {
-        image: '/src/assets/living3.jpg',
-        icon: '/src/assets/icon-3.svg',
-        title: 'L&T Seawoods',
-        description: '40 acre Development'
-      },
-      {
-        image: '/src/assets/living4.jpg',
-        icon: '/src/assets/icon-4.svg',
-        title: 'Birla Varya',
-        description: '53 Storeys Tower'
-      }
-    ]}
-  />
 
   <!-- Expert Approved Performance Section -->
   <ExpertApprovedCarousel
@@ -271,6 +291,35 @@ import { Footer } from "../components/react/Footer";
       }
     ]}
   />
+  <!-- Thoughtful Reads for Modern Living Section -->
+   <div class="modern-living">
+	<CraftedOrIconicSpaces
+    client:load
+    title="Thoughtful Reads for Modern Living"
+    spaces={[
+      {
+        image: '/src/assets/modernL1.jpg',
+        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
+        link: 'link-to-rumrail-nirvana'
+      },
+      {
+        image: '/src/assets/modernL2.jpg',
+        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
+        link: 'link-to-rustumjee-reserve'
+      },
+      {
+        image: '/src/assets/modernL3.jpg',
+        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
+        link: 'link-to-lt-seawoods'
+      },
+      {
+        image: '/src/assets/modernL4.jpg',
+        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
+        link: 'link-to-birla-varya'
+      }
+    ]}
+  />
+   </div>
 
   <!-- CTA Section -->
   <CTASection

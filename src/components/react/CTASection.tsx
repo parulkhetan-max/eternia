@@ -23,7 +23,7 @@ export function CTASection({
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Content */}
       <div className="relative z-10 container-flex text-center">

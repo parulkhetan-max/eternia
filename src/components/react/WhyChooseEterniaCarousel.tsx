@@ -3,6 +3,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
 
@@ -23,25 +25,68 @@ export function WhyChooseEterniaCarousel({
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
   const [count, setCount] = React.useState(0)
+  const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
-    if (!api) {
+    setMounted(true)
+  }, [])
+
+  React.useEffect(() => {
+    if (!api || !mounted) {
       return
     }
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
+    const timer = setTimeout(() => {
+      setCount(api.scrollSnapList().length)
+      setCurrent(api.selectedScrollSnap())
+    }, 50)
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+    const handleSelect = () => {
+      setCurrent(api.selectedScrollSnap())
+    }
+
+    api.on("select", handleSelect)
+
+    return () => {
+      clearTimeout(timer)
+      api.off("select", handleSelect)
+    }
+  }, [api, mounted])
+
+  // Handle window resize to recalculate carousel layout
+  React.useEffect(() => {
+    if (!api || !mounted) {
+      return
+    }
+
+    let resizeTimer: ReturnType<typeof setTimeout>
+
+    const handleResize = () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(() => {
+        // Recalculate scroll snaps on resize with delay
+        setTimeout(() => {
+          const scrollSnapList = api.scrollSnapList()
+          setCount(scrollSnapList.length)
+          setCurrent(api.selectedScrollSnap())
+        }, 100)
+      }, 150)
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => {
+      clearTimeout(resizeTimer)
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [api, mounted])
 
   return (
-    <div className="py-15 bg-[var(--color-green)]">
+    <div className="py-12 sm:py-24"
+      style={{ backgroundImage: "url('/src/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+    >
       <div className="container-flex">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-white">
             Why Choose Eternia
           </h2>
@@ -81,7 +126,9 @@ export function WhyChooseEterniaCarousel({
                   </p>
 
                   {/* Divider */}
-                  <div className="w-full h-0.5 bg-white/10 mb-4" />
+                    <div>
+                    <img src="/src/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
+                  </div>
 
                   {/* Points */}
                   <ul className="space-y-3">
@@ -101,21 +148,27 @@ export function WhyChooseEterniaCarousel({
             ))}
           </CarouselContent>
 
-          {/* Mobile-only Indicators */}
+          {/* Mobile Navigation - Indicators and Arrows */}
           {count > 0 && (
-            <div className="flex justify-center items-center gap-3 mt-10 md:hidden">
-              {Array.from({ length: count }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => api?.scrollTo(index)}
-                  className={`rounded-full transition-all duration-300 ${
-                    index + 1 === current
-                      ? "bg-white w-3 h-3"
-                      : "bg-white/50 w-2 h-2 hover:bg-white/80"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+            <div className="flex justify-center items-center gap-4 mt-10 md:hidden">
+              <CarouselPrevious className="relative static translate-y-0 bg-white text-[var(--color-green)] border-white rounded-full hover:bg-white/30 transition-colors" />
+              
+              <div className="flex justify-center items-center gap-2">
+                {Array.from({ length: count }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={`rounded-full transition-all duration-300 ${
+                      index === current
+                        ? "bg-white w-3 h-3"
+                        : "bg-transparent w-2 h-2 border border-white"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              <CarouselNext className="relative static translate-y-0 bg-white text-[var(--color-green)] border-white rounded-full hover:bg-white/30 transition-colors" />
             </div>
           )}
         </Carousel>
