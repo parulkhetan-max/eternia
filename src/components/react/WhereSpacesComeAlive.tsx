@@ -31,7 +31,7 @@ export function WhereSpacesComeAlive({
   }, [position])
   return (
     <div className="pt-12 sm:pt-[50px] bg-white"
-    style={{ backgroundImage: "url('/src/assets/innovationBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+    style={{ backgroundImage: "url('/assets/innovationBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="container-flex">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
@@ -66,7 +66,7 @@ export function WhereSpacesComeAlive({
             {/* Labels */}
             <div className="absolute top-4 left-4 border border-white text-white px-3 py-1 rounded-sm text-sm"
               style={{
-                backgroundImage: "url('/src/assets/btn-bg.jpg')",
+                backgroundImage: "url('/assets/btn-bg.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}>
@@ -75,7 +75,7 @@ export function WhereSpacesComeAlive({
 
             <div className="absolute top-4 right-4 border border-white text-white px-3 py-1 rounded-sm text-sm"
               style={{
-                backgroundImage: "url('/src/assets/btn-bg.jpg')",
+                backgroundImage: "url('/assets/btn-bg.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}>

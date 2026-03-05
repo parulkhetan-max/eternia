@@ -69,7 +69,7 @@
     margin: 0 auto;
 }
 .home-section-c{
-  background-image: url('/src/assets/innovationBG.jpg');
+  background-image: url('/assets/innovationBG.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

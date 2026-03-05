@@ -82,7 +82,7 @@ export function WhyChooseEterniaCarousel({
 
   return (
     <div className="py-12 sm:py-[50px]"
-      style={{ backgroundImage: "url('/src/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ backgroundImage: "url('/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="container-flex">
         {/* Header */}
@@ -111,7 +111,7 @@ export function WhyChooseEterniaCarousel({
                 <div
                   className={`h-full p-6 rounded-lg border border-white/30 transition-all duration-300 hover:border-white/60`}
                   style={{
-                    backgroundImage: "url('/src/assets/Rectangle-shadow.jpg')",
+                    backgroundImage: "url('/assets/Rectangle-shadow.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
