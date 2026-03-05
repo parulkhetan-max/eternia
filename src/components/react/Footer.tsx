@@ -44,7 +44,7 @@ export function Footer() {
               className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-[var(--color-green)] hover:bg-gray-50 transition-colors"
               aria-label="Facebook"
             >
-              <img src="/assets/shape.svg" alt="Facebook" className="h-4 w-4" />
+              <img src="/assets/Shape.svg" alt="Facebook" className="h-4 w-4" />
             </a>
 
             <a
