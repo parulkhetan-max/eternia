@@ -81,7 +81,7 @@ export function WhyChooseEterniaCarousel({
   }, [api, mounted])
 
   return (
-    <div className="py-12 sm:py-[50px]"
+    <div className="py-[25px] sm:py-[50px]"
       style={{ backgroundImage: "url('/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="container-flex">

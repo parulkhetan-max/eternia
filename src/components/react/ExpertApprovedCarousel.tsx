@@ -90,7 +90,7 @@ export function ExpertApprovedCarousel({
     }
 
     return (
-        <div className="py-12 sm:py-[50px] bg-[var(--color-blue-light)]">
+        <div className="py-[25px] sm:py-[50px] bg-[var(--color-blue-light)]">
             <div className="container-flex">
                 <div className="text-center mb-8 sm:mb-16">
                     <h2 className="text-[var(--color-green)] mb-6">{title}</h2>

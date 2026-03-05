@@ -20,7 +20,7 @@ export function Footer() {
 
   return (
     <footer className="bg-[var(--color-blue-light)]">
-      <div className="container-flex py-[50px] border-b border-gray-200">
+      <div className="container-flex pt-[25px] pb-[50px] sm:py-[50px] border-b border-gray-200">
         <div className="md:text-center mb-16">
           <div className="flex justify-between md:justify-center items-center gap-10 sm:gap-28 mb-6">
             <img src="/assets/logo-dark.png" alt="Eternia" className="h-16" />

@@ -18,7 +18,7 @@ interface FAQSectionProps {
 
 export function FAQSection({ title, faqs }: FAQSectionProps) {
   return (
-    <div className="py-12 sm:py-24 bg-[var(--color-green)]">
+    <div className="pt-[50px] pb-[25px] sm:py-24 bg-[var(--color-green)]">
       <div className="container-flex">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">

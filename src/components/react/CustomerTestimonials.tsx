@@ -43,7 +43,7 @@ export function CustomerTestimonials({
   }, [api])
 
   return (
-    <div className="pb-12 sm:pb-[50px] bg-[var(--color-green)]">
+    <div className="pb-[25px] sm:pb-[50px] bg-[var(--color-green)]">
          {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-white">

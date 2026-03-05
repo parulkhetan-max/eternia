@@ -86,7 +86,7 @@ export function FeaturesCarouselReact({
   }, [api, mounted])
 
   return (
-    <div className="py-12 sm:pt-25 sm:pb-[50px] bg-[var(--color-blue-light)]">
+    <div className="pt-[50px] pb-[25px] sm:pt-25 sm:pb-[50px] bg-[var(--color-blue-light)]">
       <div className="container-flex">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-16">

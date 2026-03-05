@@ -84,7 +84,7 @@ export function CraftedOrIconicSpaces({
   }, [api, mounted])
 
   return (
-    <div className="py-14 sm:py-25 bg-white"
+    <div className="py-[50px] sm:py-25 bg-white"
     style={{ backgroundImage: "url('/assets/iconicBG.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
       <div className="container-flex">
         {/* Header */}
