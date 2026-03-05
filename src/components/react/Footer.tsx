@@ -46,6 +46,7 @@ export function Footer() {
             >
               <img src="/assets/shape.svg" alt="LinkedIn" className="h-4 w-4" />
             </a>
+            
             <a
               href="#"
               className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-[var(--color-green)] hover:bg-gray-50 transition-colors"
