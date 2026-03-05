@@ -81,7 +81,7 @@ export function WhyChooseEterniaCarousel({
   }, [api, mounted])
 
   return (
-    <div className="py-12 sm:py-24"
+    <div className="py-12 sm:py-[50px]"
       style={{ backgroundImage: "url('/src/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="container-flex">
@@ -127,7 +127,7 @@ export function WhyChooseEterniaCarousel({
 
                   {/* Divider */}
                     <div>
-                    <img src="/src/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
+                    <img src="/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
                   </div>
 
                   {/* Points */}
@@ -135,7 +135,7 @@ export function WhyChooseEterniaCarousel({
                     {item.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex gap-3 items-start">
                         <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <img src="/src/assets/check-icon.svg" alt="" />
+                          <img src="/assets/check-icon.svg" alt="" />
                         </div>
                         <span className="text-sm text-white/80 leading-relaxed">
                           {point}

@@ -30,7 +30,7 @@ export function WhereSpacesComeAlive({
     }
   }, [position])
   return (
-    <div className="pt-12 sm:pt-24 bg-white"
+    <div className="pt-12 sm:pt-[50px] bg-white"
     style={{ backgroundImage: "url('/src/assets/innovationBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="container-flex">
         {/* Header */}
@@ -90,8 +90,8 @@ export function WhereSpacesComeAlive({
               {/* Handle Circle */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl">
                 <div className="flex ">
-                  <img src="/src/assets/arrowL.svg" alt="arrow left" className="w-4 h-4" />
-                  <img src="/src/assets/arrowR.svg" alt="arrow right" className="w-4 h-4" />
+                  <img src="/assets/arrowL.svg" alt="arrow left" className="w-4 h-4" />
+                  <img src="/assets/arrowR.svg" alt="arrow right" className="w-4 h-4" />
                 </div>
               </div>
             </div>

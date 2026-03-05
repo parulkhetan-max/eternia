@@ -21,7 +21,7 @@ export function MobileMenu(): React.ReactElement {
   return (
     <>
       <div className="flex items-center justify-between gap-4">
-        <img src="/src/assets/aditya-birla.svg" alt="Logo" />
+        <img src="/assets/aditya-birla.svg" alt="Logo" />
 
         {/* Hamburger Button */}
         <button
@@ -29,7 +29,7 @@ export function MobileMenu(): React.ReactElement {
           className="text-white hover:bg-white/10 rounded-lg transition-transform duration-300"
           aria-label="Toggle menu"
         >
-          <img src="/src/assets/hamburger.svg" alt="Menu" />
+          <img src="/assets/hamburger.svg" alt="Menu" />
         </button>
       </div>
 

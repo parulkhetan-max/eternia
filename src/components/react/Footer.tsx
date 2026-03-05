@@ -20,7 +20,7 @@ export function Footer() {
 
   return (
     <footer className="bg-[var(--color-blue-light)]">
-      <div className="container-flex py-16 border-b border-gray-200">
+      <div className="container-flex py-[50px] border-b border-gray-200">
         <div className="md:text-center mb-16">
           <div className="flex justify-between md:justify-center items-center gap-10 sm:gap-28 mb-6">
             <img src="src/assets/logo-dark.png" alt="Eternia" className="h-16" />
@@ -344,9 +344,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="bg-[var(--color-green)] text-white py-6 px-4 hidden sm:block">
+      <div className="bg-[var(--color-green)] text-white py-5 hidden sm:block">
         <div className="container-flex text-xs text-center leading-relaxed">
-          <p>
+          <p className="mb-0">
             *Eternia™, Duranium™ and WiWA© are proprietary to Hindalco Industries Limited. Hindalco Industries Limited has a patent filed right for Duranium alloy. 
             Nothing contained here shall be construed as conferring any license or right under a Hindalco trademark, copyright or patent. Images on the website are 
             indicative. The final product may be different from the images displayed

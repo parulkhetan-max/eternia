@@ -58,6 +58,9 @@
 .crafted-iconic .crafted-iconic-content {
     margin: 16px;
 }
+.modern-living astro-island > div{
+    padding-top:50px !important;
+}
 /* Innovation Meets Precision Styles */
 .innovation_box_main{
   padding-top: 40px;

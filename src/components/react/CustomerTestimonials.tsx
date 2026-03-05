@@ -43,7 +43,7 @@ export function CustomerTestimonials({
   }, [api])
 
   return (
-    <div className="pb-12 sm:pb-24 bg-[var(--color-green)]">
+    <div className="pb-12 sm:pb-[50px] bg-[var(--color-green)]">
          {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-white">
@@ -51,16 +51,24 @@ export function CustomerTestimonials({
           </h2>
           <hr className="border-white mb-4 w-[40%] mx-auto" />
         </div>
-      <div className="container-full">
-        {/* Carousel */}
-        <Carousel
-          opts={{
-            align: "center",
-            loop: false,
-          }}
-          setApi={setApi}
-          className="w-full"
-        >
+      <div className="relative">
+        {/* Carousel with Side Shadows */}
+        <div className="relative">
+          {/* Left Shadow */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[var(--color-green)] to-transparent z-10 pointer-events-none" />
+          
+          {/* Right Shadow */}
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[var(--color-green)] to-transparent z-10 pointer-events-none" />
+
+          {/* Carousel */}
+          <Carousel
+            opts={{
+              align: "center",
+              loop: false,
+            }}
+            setApi={setApi}
+            className="w-full"
+          >
           <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-3">
             {testimonials.map((testimonial, index) => (
               <CarouselItem
@@ -70,7 +78,7 @@ export function CustomerTestimonials({
                 <div className="h-full p-6 rounded-lg border border-white/30 bg-white/5 backdrop-blur-sm transition-all duration-300 ">
                   {/* Quote Icon */}
                   <div className="mb-4 text-5xl text-white/40">
-                  <img src="/src/assets/left-quote.svg" alt="" /></div>
+                  <img src="/assets/left-quote.svg" alt="" /></div>
 
                   {/* Quote */}
                   <p className="text-white/90 mb-6 leading-relaxed text-sm">
@@ -79,7 +87,7 @@ export function CustomerTestimonials({
 
                   {/* Divider */}
                   <div>
-                    <img src="/src/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
+                    <img src="/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
                   </div>
 
                   {/* Author */}
@@ -120,7 +128,8 @@ export function CustomerTestimonials({
 
             <CarouselNext className="relative static translate-y-0 bg-white text-[var(--color-green)] border-white hover:bg-white/90 rounded-full" />
           </div>
-        </Carousel>
+          </Carousel>
+        </div>
 
         {/* Explore More Link */}
         <div className="text-center mt-12">

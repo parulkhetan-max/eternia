@@ -142,7 +142,7 @@ export function InnovationMeetsPrecision({
     }
 
     return (
-        <section className="home-section-c sm:py-24 pb-0 pt-12">
+        <section className="home-section-c sm:pt-[50px] sm:pb-[20px] pb-0 pt-12">
             <div className="container-flex mx-auto px-4">
                 <div className="text-center mb-0 sm:mb-18">
                     <h2 className="text-[var(--color-green)] mb-6">{title}</h2>

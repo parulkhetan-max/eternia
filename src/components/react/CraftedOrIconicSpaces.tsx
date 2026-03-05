@@ -84,7 +84,7 @@ export function CraftedOrIconicSpaces({
   }, [api, mounted])
 
   return (
-    <div className="py-14 sm:py-24 bg-white"
+    <div className="py-14 sm:py-25 bg-white"
     style={{ backgroundImage: "url('/src/assets/iconicBG.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
       <div className="container-flex">
         {/* Header */}
@@ -144,7 +144,7 @@ export function CraftedOrIconicSpaces({
                         {space.link && (
                           <div className="flex items-center gap-2 mt-2 read-more">
                               <a href={space.link} className="text-sm text-white underline">Read more</a> 
-                              <img src="/src/assets/arrow.svg" alt="" />
+                              <img src="/assets/arrow.svg" alt="" />
                           </div>
                         )}
                       </div>

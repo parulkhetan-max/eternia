@@ -14,6 +14,9 @@
   .main_image_big {
     max-width: 100%;
   }
+  nav .container-flex{
+    padding-inline: 0;
+  }
 }
 
 @media (max-width: 991px) {

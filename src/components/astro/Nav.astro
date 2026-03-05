@@ -1,89 +1,180 @@
 ---
-import {MobileMenu} from "../react/MobileMenu.tsx";
+import { MobileMenu } from "../react/MobileMenu.tsx";
 ---
 
 <nav class="fixed md:top-[20px] inset-x-0 z-40 xl:mx-0 lg:mx-8 mx-0">
-  <div  id="navbar" class="navbar-inner flex items-center container-flex justify-between px-4 py-4 md:bg-[#C4C4C4]/10 md:backdrop-blur-md bg-white border border-white/50 md:rounded-md transition-all duration-300 navbar-blurred">
-    <a href="/" class="">
-      <img id="navbar-logo" src="/src/assets/logo-light.png" alt="Eternia Logo" class="navbar-logo-light hidden md:block" width={132}>
-      <img id="navbar-logo-mobile" src="/src/assets/logo-dark.png" alt="Eternia Logo" class="md:hidden" width={132}>
-    </a>
+  <div class="container-flex">
+    <div
+      id="navbar"
+      class="navbar-inner flex items-center justify-between px-4 py-4 md:bg-[#C4C4C4]/10 md:backdrop-blur-md bg-white border border-white/50 md:rounded-md transition-all duration-300 navbar-blurred"
+    >
+      <a href="/" class="">
+        <img
+          id="navbar-logo"
+          src="/assets/logo-light.png"
+          alt="Eternia Logo"
+          class="navbar-logo-light hidden md:block"
+          width={132}
+        />
+        <img
+          id="navbar-logo-mobile"
+          src="/assets/logo-dark.png"
+          alt="Eternia Logo"
+          class="md:hidden"
+          width={132}
+        />
+      </a>
 
-    <ul class="hidden lg:flex gap-8 items-center">
-      <li class="relative group">
-        <a href="/" class="text-white hover:text-white font-semibold transition flex items-center gap-2 navbar-text">
-          Products
-         <svg class="group-hover:rotate-180 transition-transform mt-1" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M1.42259 0.244078C1.09715 -0.0813592 0.569515 -0.0813592 0.244078 0.244078C-0.0813592 0.569515 -0.0813592 1.09715 0.244078 1.42259L5.24408 6.42259C5.56951 6.74803 6.09715 6.74803 6.42259 6.42259L11.4226 1.42259C11.748 1.09715 11.748 0.569515 11.4226 0.244078C11.0972 -0.0813592 10.5695 -0.0813592 10.2441 0.244078L5.83333 4.65482L1.42259 0.244078Z"
-              fill="currentColor" />
-          </svg>
-        </a>
-        <div
-          class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="/"
-            class="block px-4 py-3 text-[var(--color-green)] hover:bg-blue-50 hover:text-[var(--color-green)] first:rounded-t-lg">Aluminium
-            Windows</a>
-        </div>
-      </li>
+      <ul class="hidden lg:flex gap-8 items-center">
+        <li class="relative group">
+          <a
+            href="/"
+            class="text-white hover:text-white font-semibold transition flex items-center gap-2 navbar-text"
+          >
+            Products
+            <svg
+              class="group-hover:rotate-180 transition-transform mt-1"
+              width="12"
+              height="7"
+              viewBox="0 0 12 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.42259 0.244078C1.09715 -0.0813592 0.569515 -0.0813592 0.244078 0.244078C-0.0813592 0.569515 -0.0813592 1.09715 0.244078 1.42259L5.24408 6.42259C5.56951 6.74803 6.09715 6.74803 6.42259 6.42259L11.4226 1.42259C11.748 1.09715 11.748 0.569515 11.4226 0.244078C11.0972 -0.0813592 10.5695 -0.0813592 10.2441 0.244078L5.83333 4.65482L1.42259 0.244078Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+          <div
+            class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          >
+            <a
+              href="/"
+              class="block px-4 py-3 text-[var(--color-green)] hover:bg-blue-50 hover:text-[var(--color-green)] first:rounded-t-lg"
+              >Aluminium Windows</a
+            >
+          </div>
+        </li>
 
-      <li class="relative group">
-        <a href="/" class="text-white hover:text-white transition flex items-center gap-2 navbar-text">
-          Why Eternia
-          <svg class="group-hover:rotate-180 transition-transform mt-1" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M1.42259 0.244078C1.09715 -0.0813592 0.569515 -0.0813592 0.244078 0.244078C-0.0813592 0.569515 -0.0813592 1.09715 0.244078 1.42259L5.24408 6.42259C5.56951 6.74803 6.09715 6.74803 6.42259 6.42259L11.4226 1.42259C11.748 1.09715 11.748 0.569515 11.4226 0.244078C11.0972 -0.0813592 10.5695 -0.0813592 10.2441 0.244078L5.83333 4.65482L1.42259 0.244078Z"
-              fill="currentColor" />
-          </svg>
-        </a>
-        <div
-          class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="#" class="block px-4 py-3 text-[var(--color-green)] hover:bg-blue-50 hover:text-[var(--color-green)] first:rounded-t-lg">Our
-            Story</a>
-         
-        </div>
-      </li>
+        <li class="relative group">
+          <a
+            href="/"
+            class="text-white hover:text-white transition flex items-center gap-2 navbar-text"
+          >
+            Why Eternia
+            <svg
+              class="group-hover:rotate-180 transition-transform mt-1"
+              width="12"
+              height="7"
+              viewBox="0 0 12 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.42259 0.244078C1.09715 -0.0813592 0.569515 -0.0813592 0.244078 0.244078C-0.0813592 0.569515 -0.0813592 1.09715 0.244078 1.42259L5.24408 6.42259C5.56951 6.74803 6.09715 6.74803 6.42259 6.42259L11.4226 1.42259C11.748 1.09715 11.748 0.569515 11.4226 0.244078C11.0972 -0.0813592 10.5695 -0.0813592 10.2441 0.244078L5.83333 4.65482L1.42259 0.244078Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+          <div
+            class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          >
+            <a
+              href="#"
+              class="block px-4 py-3 text-[var(--color-green)] hover:bg-blue-50 hover:text-[var(--color-green)] first:rounded-t-lg"
+              >Our Story</a
+            >
+          </div>
+        </li>
 
-      <li><a href="/" class="text-white navbar-text hover:text-white transition">Services & Supports</a></li>
-      <li><a href="/" class="text-white navbar-text hover:text-white transition">News and Events</a></li>
-      <li><a href="/" class="text-white navbar-text hover:text-white transition">Help</a></li>
-      <li>
-         <button class="px-[18px] py-4 bg-white text-[var(--color-green)] leading-none rounded-lg hover:bg-white transition flex gap-2 items-center cursor-pointer transition-all duration-300 navbar-button">
-        Book a Consultation 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16">
-          <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" fill="currentColor"/></svg>
-      </button>
-      </li>
-    </ul>
+        <li>
+          <a href="/" class="text-white navbar-text hover:text-white transition"
+            >Services & Supports</a
+          >
+        </li>
+        <li>
+          <a href="/" class="text-white navbar-text hover:text-white transition"
+            >News and Events</a
+          >
+        </li>
+        <li>
+          <a href="/" class="text-white navbar-text hover:text-white transition"
+            >Help</a
+          >
+        </li>
+        <li>
+          <button
+            class="px-[18px] py-4 bg-white text-[var(--color-green)] leading-none rounded-lg hover:bg-white transition flex gap-2 items-center cursor-pointer transition-all duration-300 navbar-button"
+          >
+            Book a Consultation
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              width="16"
+              height="16"
+            >
+              <path
+                d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"
+                fill="currentColor"></path></svg
+            >
+          </button>
+        </li>
+      </ul>
 
-    <div class="lg:hidden block">
-      <MobileMenu client:load />
+      <div class="lg:hidden block">
+        <MobileMenu client:load />
+      </div>
     </div>
   </div>
 </nav>
 
 <script>
-  const navbar = document.getElementById('navbar');
-  const navbarLogo = document.getElementById('navbar-logo') as HTMLImageElement | null;
-  
+  const navbar = document.getElementById("navbar");
+  const navbarLogo = document.getElementById(
+    "navbar-logo",
+  ) as HTMLImageElement | null;
+
   if (navbar && navbarLogo) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
         // Scrolled - white background with green text
-        navbar.classList.add('bg-white', 'backdrop-blur-0', 'border-gray-200', 'navbar-scrolled');
-        navbar.classList.remove('md:bg-[#C4C4C4]/10', 'md:backdrop-blur-md', 'border-transparent', 'navbar-blurred');
+        navbar.classList.add(
+          "bg-white",
+          "backdrop-blur-0",
+          "border-gray-200",
+          "navbar-scrolled",
+        );
+        navbar.classList.remove(
+          "md:bg-[#C4C4C4]/10",
+          "md:backdrop-blur-md",
+          "border-transparent",
+          "navbar-blurred",
+        );
         // Change logo to dark version on white background
-        navbarLogo.src = '/src/assets/logo-dark.png';
-        navbarLogo.classList.add('navbar-logo-dark');
-        navbarLogo.classList.remove('navbar-logo-light');
+        navbarLogo.src = "/src/assets/logo-dark.png";
+        navbarLogo.classList.add("navbar-logo-dark");
+        navbarLogo.classList.remove("navbar-logo-light");
       } else {
         // At top - transparent with blur and white text
-        navbar.classList.add('md:bg-[#C4C4C4]/10', 'md:backdrop-blur-md', 'border-transparent', 'navbar-blurred');
-        navbar.classList.remove('bg-white', 'backdrop-blur-0', 'border-gray-200', 'navbar-scrolled');
+        navbar.classList.add(
+          "md:bg-[#C4C4C4]/10",
+          "md:backdrop-blur-md",
+          "border-transparent",
+          "navbar-blurred",
+        );
+        navbar.classList.remove(
+          "bg-white",
+          "backdrop-blur-0",
+          "border-gray-200",
+          "navbar-scrolled",
+        );
         // Change logo back to light version
-        navbarLogo.src = '/src/assets/logo-light.png';
-        navbarLogo.classList.add('navbar-logo-light');
-        navbarLogo.classList.remove('navbar-logo-dark');
+        navbarLogo.src = "/src/assets/logo-light.png";
+        navbarLogo.classList.add("navbar-logo-light");
+        navbarLogo.classList.remove("navbar-logo-dark");
       }
     });
   }
