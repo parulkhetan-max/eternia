@@ -23,8 +23,8 @@ export function Footer() {
       <div className="container-flex py-[50px] border-b border-gray-200">
         <div className="md:text-center mb-16">
           <div className="flex justify-between md:justify-center items-center gap-10 sm:gap-28 mb-6">
-            <img src="src/assets/logo-dark.png" alt="Eternia" className="h-16" />
-            <img src="src/assets/image 119.jpg" alt="Aditya Birla" className="h-16" />
+            <img src="/assets/logo-dark.png" alt="Eternia" className="h-16" />
+            <img src="/assets/image 119.jpg" alt="Aditya Birla" className="h-16" />
           </div>
 
           <p className="text-[var(--color-green)] text-lg leading-relaxed max-w-4xl mx-auto mb-8">
@@ -37,33 +37,33 @@ export function Footer() {
               className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-[var(--color-green)] hover:bg-gray-50 transition-colors"
               aria-label="LinkedIn"
             >
-              <img src="src/assets/linkedin.svg" alt="LinkedIn" className="h-4 w-4" />
+              <img src="/assets/linkedin.svg" alt="LinkedIn" className="h-4 w-4" />
             </a>
             <a
               href="#"
               className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-[var(--color-green)] hover:bg-gray-50 transition-colors"
               aria-label="Facebook"
             >
-              <img src="src/assets/shape.svg" alt="LinkedIn" className="h-4 w-4" />
+              <img src="/assets/shape.svg" alt="LinkedIn" className="h-4 w-4" />
             </a>
             <a
               href="#"
               className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-[var(--color-green)] hover:bg-gray-50 transition-colors"
               aria-label="Instagram"
             >
-              <img src="src/assets/instagram.svg" alt="Instagram" className="h-4 w-4" />
+              <img src="/assets/instagram.svg" alt="Instagram" className="h-4 w-4" />
             </a>
             <a
               href="#"
               className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-[var(--color-green)] hover:bg-gray-50 transition-colors"
               aria-label="YouTube"
             >
-              <img src="src/assets/bxl-youtube.svg" alt="YouTube" className="h-4 w-4" />
+              <img src="/assets/bxl-youtube.svg" alt="YouTube" className="h-4 w-4" />
             </a>
           </div>
         </div>
         <div className="mb-8 w-full">
-          <img src="src/assets/blue-hr.svg" alt="hr line" />
+          <img src="/assets/blue-hr.svg" alt="hr line" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-8 md:border-0 border-t border-[var(--color-green)] pt-4">
           {/* Products Section */}
@@ -73,7 +73,7 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)]"
             >
               <p className="font-bold text-[var(--color-green)]">Products</p>
-              <img src="src/assets/downArrow.svg" alt="" 
+              <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.products ? "rotate-180" : ""
                 }`}/>
@@ -112,7 +112,7 @@ export function Footer() {
               className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">By type</p>
-              <img src="src/assets/downArrow.svg" alt="" 
+              <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.byType ? "rotate-180" : ""
                 }`}/>
@@ -141,7 +141,7 @@ export function Footer() {
              className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">By room</p>
-              <img src="src/assets/downArrow.svg" alt="" 
+              <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.byRoom ? "rotate-180" : ""
                 }`}/>
@@ -182,7 +182,7 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Why Eternia</p>
-               <img src="src/assets/downArrow.svg" alt="" 
+               <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.whyEternia ? "rotate-180" : ""
                 }`}/>
@@ -221,7 +221,7 @@ export function Footer() {
               className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Find the right window</p>
-               <img src="src/assets/downArrow.svg" alt="" 
+               <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.findWindow ? "rotate-180" : ""
                 }`}/>
@@ -247,7 +247,7 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Features</p>
-              <img src="src/assets/downArrow.svg" alt="" 
+              <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.features ? "rotate-180" : ""
                 }`}/>
@@ -308,7 +308,7 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Contact & Support</p>
-               <img src="src/assets/downArrow.svg" alt="" 
+               <img src="/assets/downArrow.svg" alt="" 
               className={`md:hidden w-3 h-3 transition-transform mb-4 ${
                   openSections.contact ? "rotate-180" : ""
                 }`}/>

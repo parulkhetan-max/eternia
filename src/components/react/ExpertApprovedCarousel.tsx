@@ -195,7 +195,7 @@ export function ExpertApprovedCarousel({
 
                                             {testimonial.title && (
                                                 <div className="absolute top-4 right-4 shadow-lg">
-                                                    <img src="src/assets/aditya-birla.svg" alt="" />
+                                                    <img src="/assets/aditya-birla.svg" alt="" />
                                                 </div>
                                             )}
 
