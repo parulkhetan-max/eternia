@@ -70,8 +70,8 @@ const getResponsivePositions = (screenWidth: number): Record<string, React.CSSPr
     } else if (screenWidth < 1024) {
         return {
             storm: { top: "-70px", left: "100px" },
-            wider: { top: "-70px", left: "280px" },
-            rattle: { top: "-70px", left: "430px" },
+            wider: { top: "-70px", left: "520px" },
+            rattle: { top: "-70px", left: "720px" },
             noise: { top: "-70px", right: "20px" },
             rugged: { top: "100px", left: "-20px" },
             security: { bottom: "120px", left: "-20px" },
@@ -217,10 +217,11 @@ export function InnovationMeetsPrecision({
                                         carouselPos.bottom = "-64px"
                                         carouselPos.top = "auto"
                                         carouselPos.left = "10%"
+                                        carouselPos.display = "none"
                                     } else if (index === 5) {
-                                        carouselPos.bottom = "-1px"
+                                        carouselPos.bottom = "-9px"
                                         carouselPos.top = "auto"
-                                        carouselPos.left = "166px"
+                                        carouselPos.left = "145px"
                                         carouselPos.right = "-75px"
                                     }
 
