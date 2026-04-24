@@ -72,11 +72,11 @@ const getResponsivePositions = (screenWidth: number): Record<string, React.CSSPr
             storm: { top: "-70px", left: "100px" },
             wider: { top: "-70px", left: "520px" },
             rattle: { top: "-70px", left: "720px" },
-            noise: { top: "-70px", right: "20px" },
+            noise: { top: "-20px", right: "70px" },
             rugged: { top: "100px", left: "-20px" },
             security: { bottom: "120px", left: "-20px" },
             drips: { top: "100px", right: "-20px" },
-            peace: { top: "170px", right: "-20px" },
+            peace: { top: "200px", right: "5px" },
             indian: { bottom: "-25px", left: "200px" },
             smooth: { bottom: "-25px", left: "calc(50% - 80px)" },
             sealing: { bottom: "-25px", right: "30px" },
@@ -196,6 +196,10 @@ export function InnovationMeetsPrecision({
                             <div className="home-section-c-big-image-box-mob md:hidden block w-full mb-6">
                                 {/* Carousel Slide */}
                                 {currentSlideData.features.map((f, index) => {
+                                    if (currentSlide === 1 && index === 4) {
+                                        return null
+                                    }
+
                                     const carouselPos: React.CSSProperties = {
                                         top: "0px",
                                         left: "-76px",
@@ -203,7 +207,7 @@ export function InnovationMeetsPrecision({
                                     if (index === 1) {
                                         carouselPos.top = "0px"
                                         carouselPos.left = "auto"
-                                        carouselPos.right = "-74px"
+                                        carouselPos.right = "-90px"
                                     } else if (index === 2) {
                                         carouselPos.top = "-65px"
                                         carouselPos.right = "auto"
@@ -217,11 +221,11 @@ export function InnovationMeetsPrecision({
                                         carouselPos.bottom = "-64px"
                                         carouselPos.top = "auto"
                                         carouselPos.left = "10%"
-                                        carouselPos.display = "none"
+                                        // carouselPos.display = "none"
                                     } else if (index === 5) {
-                                        carouselPos.bottom = "-9px"
+                                        carouselPos.bottom = "-5px"
                                         carouselPos.top = "auto"
-                                        carouselPos.left = "145px"
+                                        carouselPos.left = "160px"
                                         carouselPos.right = "-75px"
                                     }
 
