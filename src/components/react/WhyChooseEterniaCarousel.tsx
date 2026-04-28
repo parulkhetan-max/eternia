@@ -84,7 +84,7 @@ export function WhyChooseEterniaCarousel({
     <div className="py-[25px] sm:py-[50px]"
       style={{ backgroundImage: "url('/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
-      <div className="container-flex">
+      <div className="container-flex" style = {{paddingRight: "0px !important"}}>
         {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-white">
@@ -106,7 +106,7 @@ export function WhyChooseEterniaCarousel({
             {items.map((item, index) => (
               <CarouselItem
                 key={index}
-                className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                className="pl-4 basis-[310px]"
               >
                 <div
                   className={`h-full p-6 rounded-lg border border-white/30 transition-all duration-300 hover:border-white/60`}

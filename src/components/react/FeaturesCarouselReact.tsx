@@ -119,11 +119,11 @@ export function FeaturesCarouselReact({
                 key={groupIndex}
                 className="pl-4 basis-full"
               >
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-stretch">
                   {group.map((feature, featureIndex) => (
                     <div
                       key={`${groupIndex}-${featureIndex}`}
-                      className="features-card-inner group h-full text-center p-3 sm:p-5 rounded-md sm:rounded-lg border border-[var(--color-green)] transition-all duration-300 hover:bg-[var(--color-blue)] hover:text-white hover:border-[var(--color-blue)] hover:shadow-lg flex flex-col min-h-[220px] sm:min-h-[280px]"
+                      className="features-card-inner group h-full text-center p-3 sm:p-5 rounded-md sm:rounded-lg border border-[var(--color-green)] transition-all duration-300 hover:bg-[var(--color-blue)] hover:text-white hover:border-[var(--color-blue)] hover:shadow-lg flex flex-col min-h-[220px] sm:min-h-[323px]"
                     >
                       {/* Icon */}
                       <div className="mb-3 sm:mb-6 text-5xl flex items-center justify-center group-hover:brightness-0 group-hover:invert">

@@ -16,44 +16,49 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
 
 <Layout>
   <Nav />
-  
+
   <HeroSlider />
 
   <!-- Features Section with Carousel -->
-  <FeaturesCarouselReact 
+  <FeaturesCarouselReact
     client:load
     title="Design. Performance. Longevity."
     features={[
-	  {
-        icon: '/assets/feature-icon1.svg',
+      {
+        icon: "/assets/feature-icon1.svg",
         title: "Energy Efficient",
-        description: "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
-        learnMoreLink: "#"
+        description:
+          "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
+        learnMoreLink: "#",
       },
       {
-        icon: '/assets/feature-icon2.svg',
+        icon: "/assets/feature-icon2.svg",
         title: "Noise Insulation",
-        description: "Carefully engineered to significantly reduce external noise and create serene living spaces.",
-        learnMoreLink: "#"
+        description:
+          "Carefully engineered to significantly reduce external noise and create serene living spaces.",
+        learnMoreLink: "#",
       },
       {
-        icon: '/assets/feature-icon3.svg',
+        icon: "/assets/feature-icon3.svg",
         title: "Rainwater Insulation",
-        description: "Precision sealing systems prevent water ingress, even during intense monsoon conditions.",
-        learnMoreLink: "#"
+        description:
+          "Precision sealing systems prevent water ingress, even during intense monsoon conditions.",
+        learnMoreLink: "#",
       },
       {
-        icon: '/assets/feature-icon1.svg',
+        icon: "/assets/feature-icon1.svg",
         title: "Energy Efficient",
-        description: "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
-        learnMoreLink: "#"
+        description:
+          "Designed to enhance thermal performance while maintaining year-round indoor comfort.",
+        learnMoreLink: "#",
       },
       {
-        icon: '/assets/feature-icon4.svg',
+        icon: "/assets/feature-icon4.svg",
         title: "Storm Resistant",
-        description: "Tested to endure high wind loads and extreme weather with lasting reliable strength.",
-        learnMoreLink: "#"
-      }
+        description:
+          "Tested to endure high wind loads and extreme weather with lasting reliable strength.",
+        learnMoreLink: "#",
+      },
     ]}
   />
 
@@ -63,41 +68,202 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
     title="When Innovation Meets Perfection"
     mainImage="/assets/image 136.png"
     features={[
-      { id: "storm", label: "Storm Proof Strength", desc: "Designed to withstand cyclonic winds", position: "storm", width: "auto", carouselGroup: 1 },
-      { id: "wider", label: "Wider Views", desc: "Larger panel sizes", position: "wider", width: "auto", carouselGroup: 1 },
-      { id: "rattle", label: "No Rattling", desc: "Sturdy quality accessories & woolpile", position: "rattle", width: "auto", carouselGroup: 1 },
-      { id: "noise", label: "Noise Insulation", desc: "High-quality gaskets with fin-based woolpile", position: "noise", width: "199px", carouselGroup: 1 },
-      { id: "rugged", label: "Rugged Reliability", desc: "40% stronger than standard aluminium", position: "rugged", width: "auto", carouselGroup: 1 },
-      { id: "security", label: "Enhanced Security", desc: "Multi-point locking mechanisms for added protection", position: "security", width: "234px", carouselGroup: 2 },
-      { id: "drips", label: "No Drips or Leaks", desc: "Efficient and intelligent water drainage system", position: "drips", width: "auto", carouselGroup: 2 },
-      { id: "peace", label: "Peace of Mind", desc: "12-year warranty on aluminium profiles + 5-year warranty on hardware", position: "peace", width: "260px", carouselGroup: 2 },
-      { id: "indian", label: "Made for Indian Conditions", desc: "Collapsible intergrated pest mesh", position: "indian", width: "240px", carouselGroup: 2 },
-      { id: "smooth", label: "Smooth Operation", desc: "1L+ Cycle tested rollers & hinges", position: "smooth", width: "220px", carouselGroup: 2 },
-      { id: "sealing", label: "High Quality Sealing", desc: "Silicated fin-based woolpile blocks water, dust, and sound", position: "sealing", width: "267px", carouselGroup: 2 },
+      {
+        id: "storm",
+        label: "Storm Proof Strength",
+        desc: "Designed to withstand cyclonic winds",
+        position: "storm",
+        width: "auto",
+        carouselGroup: 1,
+      },
+      {
+        id: "wider",
+        label: "Wider Views",
+        desc: "Larger panel sizes",
+        position: "wider",
+        width: "auto",
+        carouselGroup: 1,
+      },
+      {
+        id: "rattle",
+        label: "No Rattling",
+        desc: "Sturdy quality accessories & woolpile",
+        position: "rattle",
+        width: "auto",
+        carouselGroup: 1,
+      },
+      {
+        id: "noise",
+        label: "Noise Insulation",
+        desc: "High-quality gaskets with fin-based woolpile",
+        position: "noise",
+        width: "199px",
+        carouselGroup: 1,
+      },
+      {
+        id: "rugged",
+        label: "Rugged Reliability",
+        desc: "40% stronger than standard aluminium",
+        position: "rugged",
+        width: "auto",
+        carouselGroup: 1,
+      },
+      {
+        id: "security",
+        label: "Enhanced Security",
+        desc: "Multi-point locking mechanisms for added protection",
+        position: "security",
+        width: "234px",
+        carouselGroup: 2,
+      },
+      {
+        id: "drips",
+        label: "No Drips or Leaks",
+        desc: "Efficient and intelligent water drainage system",
+        position: "drips",
+        width: "auto",
+        carouselGroup: 2,
+      },
+      {
+        id: "peace",
+        label: "Peace of Mind",
+        desc: "12-year warranty on aluminium profiles + 5-year warranty on hardware",
+        position: "peace",
+        width: "260px",
+        carouselGroup: 2,
+      },
+      {
+        id: "indian",
+        label: "Made for Indian Conditions",
+        desc: "Collapsible intergrated pest mesh",
+        position: "indian",
+        width: "240px",
+        carouselGroup: 2,
+      },
+      {
+        id: "smooth",
+        label: "Smooth Operation",
+        desc: "1L+ Cycle tested rollers & hinges",
+        position: "smooth",
+        width: "220px",
+        carouselGroup: 2,
+      },
+      {
+        id: "sealing",
+        label: "High Quality Sealing",
+        desc: "Silicated fin-based woolpile blocks water, dust, and sound",
+        position: "sealing",
+        width: "267px",
+        carouselGroup: 2,
+      },
     ]}
     carouselSlides={[
       {
         image: "/assets/image013601.png",
         features: [
-          { id: "storm", label: "Storm Proof Strength", desc: "Designed to withstand cyclonic winds", position: "storm", width: "220px", carouselGroup: 1 },
-          { id: "wider", label: "Wider Views", desc: "Larger panel sizes", position: "wider", width: "auto", carouselGroup: 1 },
-          { id: "rugged", label: "Rugged Reliability", desc: "40% stronger than standard aluminium", position: "rugged", width: "100%", carouselGroup: 1 },
-          { id: "security", label: "Enhanced Security", desc: "Multi-point locking mechanisms", position: "security", width: "200px", carouselGroup: 1 },
-          { id: "indian", label: "Made for Indian Conditions", desc: "Collapsible intergrated pest mesh", position: "indian", width: "240px", carouselGroup: 1 },
-          { id: "smooth", label: "Smooth Operation", desc: "1L+ Cycle tested rollers & hinges", position: "smooth", width: "100%", carouselGroup: 1 },
-        ]
+          {
+            id: "storm",
+            label: "Storm Proof Strength",
+            desc: "Designed to withstand cyclonic winds",
+            position: "storm",
+            width: "220px",
+            carouselGroup: 1,
+          },
+          {
+            id: "wider",
+            label: "Wider Views",
+            desc: "Larger panel sizes",
+            position: "wider",
+            width: "auto",
+            carouselGroup: 1,
+          },
+          {
+            id: "rugged",
+            label: "Rugged Reliability",
+            desc: "40% stronger than standard aluminium",
+            position: "rugged",
+            width: "100%",
+            carouselGroup: 1,
+          },
+          {
+            id: "security",
+            label: "Enhanced Security",
+            desc: "Multi-point locking mechanisms",
+            position: "security",
+            width: "200px",
+            carouselGroup: 1,
+          },
+          {
+            id: "indian",
+            label: "Made for Indian Conditions",
+            desc: "Collapsible intergrated pest mesh",
+            position: "indian",
+            width: "240px",
+            carouselGroup: 1,
+          },
+          {
+            id: "smooth",
+            label: "Smooth Operation",
+            desc: "1L+ Cycle tested rollers & hinges",
+            position: "smooth",
+            width: "100%",
+            carouselGroup: 1,
+          },
+        ],
       },
       {
         image: "/assets/image013601.png",
         features: [
-          { id: "noise", label: "Noise Insulation", desc: "High quality gaskets & fin based woolpile", position: "noise", width: "240px", carouselGroup: 2 },
-          { id: "drips", label: "No Drips or Leaks", desc: "Efficient water drainage system", position: "drips", width: "210px", carouselGroup: 2 },
-          { id: "rattle", label: "No Rattling", desc: "Sturdy quality accessories & woolpile", position: "rattle", width: "200px", carouselGroup: 2 },
-          { id: "peace", label: "Peace of Mind", desc: "12 year brand warranty on profiles + 5 years warranty on hardware", position: "peace", width: "160px", carouselGroup: 2 },
-          { id: "", label: "", desc: "", position: "indian", width: "", carouselGroup: 2 },
-          { id: "sealing", label: "High Quality Sealing", desc: "Silcated fin-based wool pile to block out water, dust & sound", position: "sealing", width: "250px", carouselGroup: 2 },
-        ]
-      }
+          {
+            id: "noise",
+            label: "Noise Insulation",
+            desc: "High quality gaskets & fin based woolpile",
+            position: "noise",
+            width: "240px",
+            carouselGroup: 2,
+          },
+          {
+            id: "drips",
+            label: "No Drips or Leaks",
+            desc: "Efficient water drainage system",
+            position: "drips",
+            width: "210px",
+            carouselGroup: 2,
+          },
+          {
+            id: "rattle",
+            label: "No Rattling",
+            desc: "Sturdy quality accessories & woolpile",
+            position: "rattle",
+            width: "200px",
+            carouselGroup: 2,
+          },
+          {
+            id: "peace",
+            label: "Peace of Mind",
+            desc: "12 year brand warranty on profiles + 5 years warranty on hardware",
+            position: "peace",
+            width: "160px",
+            carouselGroup: 2,
+          },
+          {
+            id: "",
+            label: "",
+            desc: "",
+            position: "indian",
+            width: "",
+            carouselGroup: 2,
+          },
+          {
+            id: "sealing",
+            label: "High Quality Sealing",
+            desc: "Silcated fin-based wool pile to block out water, dust & sound",
+            position: "sealing",
+            width: "250px",
+            carouselGroup: 2,
+          },
+        ],
+      },
     ]}
   />
   <!-- Why Choose Eternia Section -->
@@ -105,45 +271,45 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
     client:load
     items={[
       {
-        icon: '/assets/why-icon1.svg',
+        icon: "/assets/why-icon1.svg",
         title: "MADE WITH DURANIUM",
         subtitle: "Stronger. Sleeker. Smarter.",
         points: [
           "Patented alloy, 40% stronger than standard aluminium",
           "Enables larger windows with slimmer profiles",
-          "Cyclone-tested for extreme durability & reliability"
-        ]
+          "Cyclone-tested for extreme durability & reliability",
+        ],
       },
       {
-        icon: '/assets/why-icon2.svg',
+        icon: "/assets/why-icon2.svg",
         title: "W/WA CERTIFIED SAFETY",
         subtitle: "Tested. Trusted. Strong.",
         points: [
           "Windows tested for wind, water, and air performance",
           "Leak-proof, rattle-free & weather-resistant Windows",
-          "Transparent scoring system for consumer confidence"
-        ]
+          "Transparent scoring system for consumer confidence",
+        ],
       },
       {
-        icon: '/assets/why-icon3.svg',
+        icon: "/assets/why-icon3.svg",
         title: "SUSTAINABILITY",
         subtitle: "Assured Service Guarantee",
         points: [
           "12-Year Warranty",
           "Dedicated 7-Day Call Center for support",
-          "Rigorous post-installation checks for complete satisfaction"
-        ]
+          "Rigorous post-installation checks for complete satisfaction",
+        ],
       },
       {
-        icon: '/assets/why-icon4.svg',
+        icon: "/assets/why-icon4.svg",
         title: "ETERNIA CARE",
         subtitle: "Greener Homes Promise",
         points: [
           "Aluminium – the world's only eternally recyclable material",
           "GreenPro Certified products for a greener future",
-          "Sustainable production processes for eco-conscious living"
-        ]
-      }
+          "Sustainable production processes for eco-conscious living",
+        ],
+      },
     ]}
   />
 
@@ -157,43 +323,44 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
   />
 
   <!-- Crafted or Iconic Spaces Section -->
-<div class="crafted-iconic">
+  <div class="crafted-iconic">
     <CraftedOrIconicSpaces
-    client:load
-    title="Crafted or Iconic Spaces"
-    spaces={[
-      {
-        image: '/assets/iconic_img3.jpg',
-        icon: '/assets/Ellipse1.svg',
-        title: 'Rumrail Nirvana',
-        description: '54 Storey Luxury Tower'
-      },
-      {
-        image: '/assets/iconic_img2.jpg',
-        icon: '/assets/Ellipse2.svg',
-        title: 'Rustumjee Reserve',
-        description: '22 Storey High-Rise Tower'
-      },
-      {
-        image: '/assets/iconic_img3.jpg',
-        icon: '/assets/Ellipse3.svg',
-        title: 'L&T Seawoods',
-        description: '40 acre Development'
-      },
-      {
-        image: '/assets/iconic_img2.jpg',
-        icon: '/assets/Ellipse4.svg',
-        title: 'Birla Varya',
-        description: '23 Storeys Tower',
-      },{
-        image: '/assets/iconic_img3.jpg',
-        icon: '/assets/Ellipse1.svg',
-        title: 'Rumrail Nirvana',
-        description: '54 Storey Luxury Tower'
-      }
-    ]}
-  />
-</div>
+      client:load
+      title="Crafted or Iconic Spaces"
+      spaces={[
+        {
+          image: "/assets/iconic_img3.jpg",
+          icon: "/assets/Ellipse1.svg",
+          title: "Rumrail Nirvana",
+          description: "54 Storey Luxury Tower",
+        },
+        {
+          image: "/assets/iconic_img2.jpg",
+          icon: "/assets/Ellipse2.svg",
+          title: "Rustumjee Reserve",
+          description: "22 Storey High-Rise Tower",
+        },
+        {
+          image: "/assets/iconic_img3.jpg",
+          icon: "/assets/Ellipse3.svg",
+          title: "L&T Seawoods",
+          description: "40 acre Development",
+        },
+        {
+          image: "/assets/iconic_img2.jpg",
+          icon: "/assets/Ellipse4.svg",
+          title: "Birla Varya",
+          description: "23 Storeys Tower",
+        },
+        {
+          image: "/assets/iconic_img3.jpg",
+          icon: "/assets/Ellipse1.svg",
+          title: "Rumrail Nirvana",
+          description: "54 Storey Luxury Tower",
+        },
+      ]}
+    />
+  </div>
 
   <!-- Customer Testimonials Section -->
   <CustomerTestimonials
@@ -201,45 +368,53 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
     title="What Our Customers Have to Say"
     testimonials={[
       {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
       },
       {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
       },
       {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
-      },
-	  {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
-      },
-	  {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
-      },
-	  {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
-      },
-	  {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
       },
       {
-        quote: 'Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.',
-        author: 'Mr. Vinod Mittal',
-        role: ''
-      }
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable. Outstanding windows. Gunjan is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
     ]}
     exploreMoreLink="#"
   />
@@ -250,76 +425,80 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
     title="Expert-Approved Performance"
     testimonials={[
       {
-        image: '/assets/placeholder.jpg',
-        videoThumbnail: '/assets/video1.jpg',
-        videoLink: 'https://youtube.com/watch?v=video1',
-        name: 'Ms Vidi Dugg',
-        title: 'Noise & leak proof',
-        instagram: 'https://instagram.com/'
+        image: "/assets/placeholder.jpg",
+        videoThumbnail: "/assets/video1.jpg",
+        videoLink: "https://youtube.com/watch?v=video1",
+        name: "Ms Vidi Dugg",
+        title: "Noise & leak proof",
+        instagram: "https://instagram.com/",
       },
       {
-        image: '/assets/placeholder.jpg',
-        videoThumbnail: '/assets/video2.jpg',
-        videoLink: 'https://youtube.com/watch?v=video2',
-        name: 'Ms Ridhi Khosla Jalan',
-        title: 'Which Window?',
-        instagram: 'https://instagram.com/'
+        image: "/assets/placeholder.jpg",
+        videoThumbnail: "/assets/video2.jpg",
+        videoLink: "https://youtube.com/watch?v=video2",
+        name: "Ms Ridhi Khosla Jalan",
+        title: "Which Window?",
+        instagram: "https://instagram.com/",
       },
       {
-        image: '/assets/placeholder.jpg',
-        videoThumbnail: '/assets/video3.jpg',
-        videoLink: 'https://youtube.com/watch?v=video3',
-        name: 'Mr Krsna Mehta',
-        title: 'Weather Proof',
-        instagram: 'https://instagram.com/'
+        image: "/assets/placeholder.jpg",
+        videoThumbnail: "/assets/video3.jpg",
+        videoLink: "https://youtube.com/watch?v=video3",
+        name: "Mr Krsna Mehta",
+        title: "Weather Proof",
+        instagram: "https://instagram.com/",
       },
       {
-        image: '/assets/placeholder.jpg',
-        videoThumbnail: '/assets/video4.jpg',
-        videoLink: 'https://youtube.com/watch?v=video4',
-        name: 'Ms Prohina',
-        title: 'Design Expert',
-        instagram: 'https://instagram.com/'
+        image: "/assets/placeholder.jpg",
+        videoThumbnail: "/assets/video4.jpg",
+        videoLink: "https://youtube.com/watch?v=video4",
+        name: "Ms Prohina",
+        title: "Design Expert",
+        instagram: "https://instagram.com/",
       },
       {
-        image: '/assets/placeholder.jpg',
-        videoThumbnail: '/assets/video3.jpg',
-        videoLink: 'https://youtube.com/watch?v=video5',
-        name: 'Mr Arjun Gandhi',
-        title: 'Performance',
-        instagram: 'https://instagram.com/'
-      }
+        image: "/assets/placeholder.jpg",
+        videoThumbnail: "/assets/video3.jpg",
+        videoLink: "https://youtube.com/watch?v=video5",
+        name: "Mr Arjun Gandhi",
+        title: "Performance",
+        instagram: "https://instagram.com/",
+      },
     ]}
   />
   <!-- Thoughtful Reads for Modern Living Section -->
-   <div class="modern-living">
-	<CraftedOrIconicSpaces
-    client:load
-    title="Thoughtful Reads for Modern Living"
-    spaces={[
-      {
-        image: '/assets/modernL1.jpg',
-        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
-        link: 'link-to-rumrail-nirvana'
-      },
-      {
-        image: '/assets/modernL2.jpg',
-        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
-        link: 'link-to-rustumjee-reserve'
-      },
-      {
-        image: '/assets/modernL3.jpg',
-        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
-        link: 'link-to-lt-seawoods'
-      },
-      {
-        image: '/assets/modernL4.jpg',
-        description: 'Beyond the Basics: Exploring Unique Window Types for Your Dream Home',
-        link: 'link-to-birla-varya'
-      }
-    ]}
-  />
-   </div>
+  <div class="modern-living">
+    <CraftedOrIconicSpaces
+      client:load
+      title="Thoughtful Reads for Modern Living"
+      spaces={[
+        {
+          image: "/assets/modernL1.jpg",
+          description:
+            "Beyond the Basics: Exploring Unique Window Types for Your Dream Home",
+          link: "link-to-rumrail-nirvana",
+        },
+        {
+          image: "/assets/modernL2.jpg",
+          description:
+            "Beyond the Basics: Exploring Unique Window Types for Your Dream Home",
+          link: "link-to-rustumjee-reserve",
+        },
+        {
+          image: "/assets/modernL3.jpg",
+          description:
+            "Beyond the Basics: Exploring Unique Window Types for Your Dream Home",
+          link: "link-to-lt-seawoods",
+        },
+        {
+          image: "/assets/modernL4.jpg",
+          description:
+            "Beyond the Basics: Exploring Unique Window Types for Your Dream Home",
+          link: "link-to-birla-varya",
+        },
+      ]}
+    />
+  </div>
 
   <!-- CTA Section -->
   <CTASection
@@ -337,59 +516,76 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
     faqs={[
       {
         question: "What are the different windows offered by Eternia?",
-        answer: "Eternia offers aluminium windows and doors of every type, size and colour. Our main offerings include: Sliding aluminium windows and doors, Openable/casement aluminium windows and doors. We also offer aluminium windows and doors for all rooms, including living rooms, kitchens and bedrooms. Our aluminium windows and doors can be classified into Duraslim Edge, Duraslim and Essentials - which are three ranges of high-quality products designed to ensure that every Indian home can have true aluminium windows."
+        answer:
+          "Eternia offers aluminium windows and doors of every type, size and colour. Our main offerings include: Sliding aluminium windows and doors, Openable/casement aluminium windows and doors. We also offer aluminium windows and doors for all rooms, including living rooms, kitchens and bedrooms. Our aluminium windows and doors can be classified into Duraslim Edge, Duraslim and Essentials - which are three ranges of high-quality products designed to ensure that every Indian home can have true aluminium windows.",
       },
       {
         question: "Which window is better for me: aluminium, wood or uPVC?",
-        answer: "Each material has its own advantages. Aluminium windows offer durability, low maintenance, and modern aesthetics. Wood provides a classic look but requires more maintenance. uPVC is cost-effective and energy-efficient. We recommend consulting with our design experts to determine which option best suits your needs and preferences."
+        answer:
+          "Each material has its own advantages. Aluminium windows offer durability, low maintenance, and modern aesthetics. Wood provides a classic look but requires more maintenance. uPVC is cost-effective and energy-efficient. We recommend consulting with our design experts to determine which option best suits your needs and preferences.",
       },
       {
         question: "Do you manufacture aluminium windows and doors?",
-        answer: "Yes, we manufacture high-quality aluminium windows and doors using advanced technology and premium materials. Our manufacturing process ensures superior quality and durability that meets international standards."
+        answer:
+          "Yes, we manufacture high-quality aluminium windows and doors using advanced technology and premium materials. Our manufacturing process ensures superior quality and durability that meets international standards.",
       },
       {
-        question: "What are the different colours you offer in aluminium windows?",
-        answer: "We offer a wide range of colours and finishes for our aluminium windows including natural silver, bronze, black, white, and custom colour options. Our powder-coated finishes provide excellent durability and aesthetic appeal."
-      }
+        question:
+          "What are the different colours you offer in aluminium windows?",
+        answer:
+          "We offer a wide range of colours and finishes for our aluminium windows including natural silver, bronze, black, white, and custom colour options. Our powder-coated finishes provide excellent durability and aesthetic appeal.",
+      },
     ]}
   />
 
   <Footer client:load />
-
 </Layout>
 
 <style>
+  @media (max-width: 768px) {
+    .innovation-meets-precision-section .container-flex {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+
   @media (max-width: 425px) {
-  .features-card-inner {
-    padding: 10px 8px !important;
-  }
-  .features-carousel-mobile [data-radix-scroll-area-viewport] {
-    overflow: visible !important;
-  }
+    .features-card-inner {
+      padding: 10px 8px !important;
+    }
+    .features-carousel-mobile [data-radix-scroll-area-viewport] {
+      overflow: visible !important;
+    }
 
-   .features-carousel-mobile [class*="CarouselContent"] {
-    flex-wrap: wrap !important;
-    overflow: visible !important;
-  }
+    .features-carousel-mobile [class*="CarouselContent"] {
+      flex-wrap: wrap !important;
+      overflow: visible !important;
+    }
 
-  .features-card-inner h3 {
-    font-size: 13px !important;
-    margin-bottom: 8px !important;
-  }
+    .features-card-inner h3 {
+      font-size: 13px !important;
+      margin-bottom: 8px !important;
+    }
 
-  .features-card-inner p {
-    font-size: 11px !important;
-    margin-bottom: 8px !important;
-    line-height: 1.4 !important;
-  }
+    .features-card-inner p {
+      font-size: 11px !important;
+      margin-bottom: 8px !important;
+      line-height: 1.4 !important;
+    }
 
-  .features-card-inner img {
-    width: 45px !important;
-    height: 45px !important;
-  }
+    .features-card-inner img {
+      width: 45px !important;
+      height: 45px !important;
+    }
 
-  .features-card-inner .mb-6 {
-    margin-bottom: 8px !important;
+    .features-card-inner .mb-6 {
+      margin-bottom: 8px !important;
+    }
   }
-}
+  @media (max-width: 320px) {
+    .innovation-meets-precision-section .container-flex {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
 </style>
