@@ -357,3 +357,39 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
   <Footer client:load />
 
 </Layout>
+
+<style>
+  @media (max-width: 425px) {
+  .features-card-inner {
+    padding: 10px 8px !important;
+  }
+  .features-carousel-mobile [data-radix-scroll-area-viewport] {
+    overflow: visible !important;
+  }
+
+   .features-carousel-mobile [class*="CarouselContent"] {
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+  }
+
+  .features-card-inner h3 {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .features-card-inner p {
+    font-size: 11px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
+  }
+
+  .features-card-inner img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .features-card-inner .mb-6 {
+    margin-bottom: 8px !important;
+  }
+}
+</style>

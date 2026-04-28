@@ -103,16 +103,16 @@ export function FeaturesCarouselReact({
             loop: false,
           }}
           setApi={setApi}
-          className="w-full"
+          className="w-full features-carousel-mobile"
         >
           <CarouselContent className="-ml-4">
             {features.map((feature, index) => (
               <CarouselItem
                 key={index}
-                className="pl-4 basis-full md:basis-1/2 lg:basis-1/4"
+                className="pl-4 basis-1/2 md:basis-1/2 lg:basis-1/4"
               >
                 <div
-                  className={`group h-full text-center p-6 rounded-lg border border-[var(--color-green)] transition-all duration-300 hover:bg-[var(--color-blue)] hover:text-white hover:border-[var(--color-blue)] hover:shadow-lg`}
+                  className={`features-card-inner group h-full text-center p-5 rounded-lg border border-[var(--color-green)] transition-all duration-300 hover:bg-[var(--color-blue)] hover:text-white hover:border-[var(--color-blue)] hover:shadow-lg flex flex-col`}
                 >
                   {/* Icon */}
                   <div
@@ -126,7 +126,7 @@ export function FeaturesCarouselReact({
 
                   {/* Description */}
                   <p
-                    className={`text-[var(--color-green)] mb-6 group-hover:text-white transition-colors duration-300`}
+                    className={`text-[var(--color-green)] mb-6 group-hover:text-white transition-colors duration-300 flex-1`}
                   >
                     {feature.description}
                   </p>
@@ -134,7 +134,7 @@ export function FeaturesCarouselReact({
                   {/* Learn More Link */}
                   <a
                     href={feature.learnMoreLink}
-                    className={`inline-block underline transition-colors duration-300 group-hover:text-white`}
+                    className={`inline-block underline transition-colors duration-300 group-hover:text-white mt-auto`}
                   >
                     Learn More
                   </a>

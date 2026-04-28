@@ -207,7 +207,7 @@ export function InnovationMeetsPrecision({
                                     if (index === 1) {
                                         carouselPos.top = "0px"
                                         carouselPos.left = "auto"
-                                        carouselPos.right = "-90px"
+                                        carouselPos.right = "-75px"
                                     } else if (index === 2) {
                                         carouselPos.top = "-65px"
                                         carouselPos.right = "auto"
