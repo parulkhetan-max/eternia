@@ -58,6 +58,14 @@ export function FeaturesCarouselReact({
     }
   }, [api, mounted])
 
+  const featureGroups = React.useMemo(() => {
+    const groups: Feature[][] = []
+    for (let i = 0; i < features.length; i += 4) {
+      groups.push(features.slice(i, i + 4))
+    }
+    return groups
+  }, [features])
+
   // Handle window resize to recalculate carousel layout
   useEffect(() => {
     if (!api || !mounted) {
@@ -106,38 +114,41 @@ export function FeaturesCarouselReact({
           className="w-full features-carousel-mobile"
         >
           <CarouselContent className="-ml-4">
-            {features.map((feature, index) => (
+            {featureGroups.map((group, groupIndex) => (
               <CarouselItem
-                key={index}
-                className="pl-4 basis-1/2 md:basis-1/2 lg:basis-1/4"
+                key={groupIndex}
+                className="pl-4 basis-full"
               >
-                <div
-                  className={`features-card-inner group h-full text-center p-5 rounded-lg border border-[var(--color-green)] transition-all duration-300 hover:bg-[var(--color-blue)] hover:text-white hover:border-[var(--color-blue)] hover:shadow-lg flex flex-col`}
-                >
-                  {/* Icon */}
-                  <div
-                    className={`mb-6 text-5xl flex items-center justify-center group-hover:brightness-0 group-hover:invert`}
-                  >
-                    <img src={feature.icon} alt={feature.title} width={80} height={80} className="transition-all duration-300" />
-                  </div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                  {group.map((feature, featureIndex) => (
+                    <div
+                      key={`${groupIndex}-${featureIndex}`}
+                      className="features-card-inner group h-full text-center p-3 sm:p-5 rounded-md sm:rounded-lg border border-[var(--color-green)] transition-all duration-300 hover:bg-[var(--color-blue)] hover:text-white hover:border-[var(--color-blue)] hover:shadow-lg flex flex-col min-h-[220px] sm:min-h-[280px]"
+                    >
+                      {/* Icon */}
+                      <div className="mb-3 sm:mb-6 text-5xl flex items-center justify-center group-hover:brightness-0 group-hover:invert">
+                        <img src={feature.icon} alt={feature.title} width={52} height={52} className="sm:w-20 sm:h-20 transition-all duration-300" />
+                      </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl text-[var(--color-green)] font-medium mb-4 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
+                      {/* Title */}
+                      <h3 className="text-base sm:text-xl text-[var(--color-green)] font-semibold sm:font-medium mb-2 sm:mb-4 group-hover:text-white transition-colors duration-300 leading-tight">{feature.title}</h3>
 
-                  {/* Description */}
-                  <p
-                    className={`text-[var(--color-green)] mb-6 group-hover:text-white transition-colors duration-300 flex-1`}
-                  >
-                    {feature.description}
-                  </p>
+                      {/* Description */}
+                      <p
+                        className="text-[13px] sm:text-base text-[var(--color-green)] mb-3 sm:mb-6 group-hover:text-white transition-colors duration-300 flex-1 leading-snug"
+                      >
+                        {feature.description}
+                      </p>
 
-                  {/* Learn More Link */}
-                  <a
-                    href={feature.learnMoreLink}
-                    className={`inline-block underline transition-colors duration-300 group-hover:text-white mt-auto`}
-                  >
-                    Learn More
-                  </a>
+                      {/* Learn More Link */}
+                      <a
+                        href={feature.learnMoreLink}
+                        className="inline-block underline text-sm sm:text-base transition-colors duration-300 group-hover:text-white mt-auto"
+                      >
+                        Learn More
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </CarouselItem>
             ))}
