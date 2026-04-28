@@ -1,0 +1,287 @@
+---
+const features = [
+  {
+    icon: "/assets/firstlogo.png",
+    title: "WiWA Tested and Certified",
+    description:
+      "WiWA tested and certified for air tightness, helping block air infiltration and limit external noise from entering indoors.",
+  },
+  {
+    icon: "/assets/glass.svg",
+    title: "High-Performance Glass Compatibility",
+    description:
+      "Compatible with high-performance glass options such as double-glazed and laminated glass, which help reduce sound transmission into the home.",
+  },
+  {
+    icon: "/assets/sealing.svg",
+    title: "Advanced Sealing System",
+    description:
+      "EPDM gaskets and fin-based woolpile ensure even the smallest gaps are sealed, preventing air and noise from entering.",
+  },
+  {
+    icon: "/assets/engineered.svg",
+    title: "Engineered Product with Quality Installation",
+    description:
+      "A precision-engineered system supported by high-quality installation for consistent performance.",
+  },
+];
+---
+
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-heading">
+      <h2>Why Homeowners Choose Eternia</h2>
+      <div class="decorativeline"
+      style="width: 470px; max-width: 90vw; height: 1px; background: rgba(255,255,255,0.55); margin: 0 auto;"
+    >
+    </div>
+      <p>Windows & Doors Built To Reduce Noise And Enhance Everyday Comfort.</p>
+    </div>
+
+    <div class="why-grid" id="whyGrid">
+      {features.map((f, i) => (
+        <div class="why-card" data-index={i}>
+          <div class="why-icon">
+            <img src={f.icon} alt={f.title} />
+          </div>
+          <h3>{f.title}</h3>
+          <p>{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-section {
+    width: 100%;
+    background: #003946;
+    padding: 70px 0;
+  }
+
+  .why-inner {
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .why-heading {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .why-heading h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 14px;
+  }
+
+  .why-heading p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  /* Base card */
+  .why-card {
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+  }
+
+  /* Active / hovered card */
+  .why-card--active {
+    background: #2aa8d4;
+    border-color: #2aa8d4;
+    transform: translateY(-4px);
+  }
+
+  .why-icon {
+    width: 172px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .why-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* filter: brightness(0) invert(1); */
+  }
+
+  /* Turn WiWA raster logo white on interaction states */
+  .why-card:hover .why-icon img[src$="firstlogo.png"],
+  .why-card.why-card--active .why-icon img[src$="firstlogo.png"] {
+    filter: brightness(0) invert(1) !important;
+    opacity: 1;
+  }
+
+  .why-card h3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .why-card p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 540px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .why-inner { padding: 0 20px; }
+  }
+
+
+  @media (max-width: 425px) {
+    .why-section {
+      padding: 20px 0;
+    }
+
+    .why-inner {
+      padding: 0 16px;
+    }
+
+    .why-heading h2 {
+      font-size: 32px;
+      line-height: 1.3;
+    }
+
+    .why-heading p {
+      font-size: 0.85rem;
+      padding: 0 10px;
+    }
+
+    .decorativeline {
+      max-width: 150px !important;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);  /* ← 2 columns */
+      gap: 12px;
+    }
+
+    .why-card {
+      padding: 16px 12px;
+      gap: 10px;
+    }
+
+    .why-icon {
+      width: 80px;
+      height: 50px;
+    }
+
+    .why-card h3 {
+      font-size: 14px;
+    }
+
+    .why-card p {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .why-heading h2 {
+      font-size: 24px;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .why-card {
+      padding: 14px 10px;
+    }
+
+    .why-card h3 {
+      font-size: 13px;
+    }
+
+    .why-card p {
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 325px) {
+    .why-heading h2 {
+      font-size: 20px;
+    }
+
+    .why-inner {
+      padding: 0 10px;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .why-card {
+      padding: 12px 8px;
+    }
+
+    .why-card h3 {
+      font-size: 12px;
+    }
+
+    .why-card p {
+      font-size: 10px;
+    }
+  }
+</style>
+
+<script>
+  function initWhyCards() {
+    const grid = document.getElementById('whyGrid');
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll('.why-card'));
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        cards.forEach((c) => c.classList.remove('why-card--active'));
+        card.classList.add('why-card--active');
+      });
+    });
+
+    // When mouse leaves the grid, clear active state
+    grid.addEventListener('mouseleave', () => {
+      cards.forEach((c) => c.classList.remove('why-card--active'));
+    });
+  }
+
+  // Run on initial load
+  initWhyCards();
+
+  // Run after Astro view transitions if used
+  document.addEventListener('astro:page-load', initWhyCards);
+</script>

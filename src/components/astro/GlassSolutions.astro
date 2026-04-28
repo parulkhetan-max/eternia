@@ -1,0 +1,423 @@
+---
+const solutions = [
+  { title: "Double Glazed Laminated", rating: "Very good (upto 35 dB)" },
+  { title: "Acoustic Laminated Glass", rating: "Excellent (Up to 32 dB)" },
+  { title: "Laminated Glass", rating: "Good (up to 30 dB)" },
+  { title: "Double Glazed", rating: "Moderate" },
+  { title: "Triple Glazed", rating: "Superior (Up to 42 dB)" },
+  { title: "Tempered Glass", rating: "Good (up to 28 dB)" },
+];
+---
+
+<section class="glass-section">
+  <div class="glass-inner">
+    <div class="glass-heading">
+      <h2>Eternia Sound-Proofing Glass Solutions</h2>
+      <div class="glass-heading-line"></div>
+    </div>
+
+    <div class="glass-slider-wrapper">
+      <div class="glass-track" id="glassTrack">
+        {
+          solutions.map((s) => (
+            <div class="glass-card">
+              <p class="glass-card-title">{s.title}</p>
+              <div class="glass-card-rating">
+                <span class="glass-icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  </svg>
+                </span>
+                <span class="glass-rating-text">{s.rating}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="glass-controls">
+      <button class="glass-btn" id="glassPrev" aria-label="Previous">
+        <img src="/assets/arrow-left.svg" alt="">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="glass-dots" id="glassDots"></div>
+
+      <button class="glass-btn" id="glassNext" aria-label="Next">
+        <img src="/assets/arrow-right.svg" alt="">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initGlassSlider() {
+    const track = document.getElementById("glassTrack") as HTMLElement | null;
+    const dotsContainer = document.getElementById(
+      "glassDots",
+    ) as HTMLElement | null;
+    const prevBtn = document.getElementById(
+      "glassPrev",
+    ) as HTMLButtonElement | null;
+    const nextBtn = document.getElementById(
+      "glassNext",
+    ) as HTMLButtonElement | null;
+
+    if (!track || !dotsContainer || !prevBtn || !nextBtn) return;
+
+    const cards = Array.from(
+      track.querySelectorAll<HTMLElement>(".glass-card"),
+    );
+    const total = cards.length;
+    let current = 0;
+
+    function getVisible(): number {
+  if (window.innerWidth <= 425) return 2;  // ← 2 cards on mobile
+  if (window.innerWidth <= 900) return 2;
+  return 4;
+}
+
+    function getTotalSlides(): number {
+  return total - getVisible() + 1;  // ← slides = total cards minus visible + 1
+}
+    
+
+    function buildDots() {
+      if (!dotsContainer) return; // ← add this null guard
+      dotsContainer.innerHTML = "";
+      const totalSlides = getTotalSlides();
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("button");
+        dot.className =
+          "glass-dot" + (i === current ? " glass-dot--active" : "");
+        dot.setAttribute("aria-label", `Slide ${i + 1}`);
+        dot.addEventListener("click", () => goTo(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      if (!dotsContainer) return; // ← add this null guard
+      const dots = dotsContainer.querySelectorAll(".glass-dot");
+      dots.forEach((d, i) => {
+        d.classList.toggle("glass-dot--active", i === current);
+      });
+    }
+
+    function updateArrowState() {
+      if (!prevBtn || !nextBtn) return;
+      const totalSlides = getTotalSlides();
+      const isFirstSlide = current <= 0;
+      const isLastSlide = current >= totalSlides - 1;
+
+      prevBtn.setAttribute("aria-disabled", String(isFirstSlide));
+      nextBtn.setAttribute("aria-disabled", String(isLastSlide));
+      prevBtn.classList.toggle("glass-btn--faded", isFirstSlide);
+      nextBtn.classList.toggle("glass-btn--faded", isLastSlide);
+    }
+
+    function goTo(index: number) {
+  if (!track || cards.length === 0) return;
+  const visible = getVisible();
+  const totalSlides = getTotalSlides();
+  current = Math.max(0, Math.min(index, totalSlides - 1));
+  const cardWidth = cards[0].offsetWidth;
+  const offset = current * (cardWidth + 20);  // ← removed * visible
+  track.style.transform = `translateX(-${offset}px)`;
+  updateDots();
+  updateArrowState();
+}
+
+    prevBtn.addEventListener("click", () => goTo(current - 1));
+    nextBtn.addEventListener("click", () => goTo(current + 1));
+
+    window.addEventListener("resize", () => {
+      current = 0;
+      buildDots();
+      goTo(0);
+    });
+
+    buildDots();
+    goTo(0);
+  }
+
+  initGlassSlider();
+  document.addEventListener("astro:page-load", initGlassSlider);
+</script>
+
+<style is:global>
+  .glass-section {
+    width: 100%;
+    background-image: url("/assets/maskgroup.svg");
+    padding: 70px 0 60px;
+  }
+
+  .glass-inner {
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .glass-heading {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .glass-heading h2 {
+    font-family: "Helvetica Neue", serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #003946;
+    margin-bottom: 14px;
+  }
+
+  .glass-heading-line {
+    max-width: 470px;
+    height: 1.5px;
+    background: #003946;
+    margin: 0 auto;
+  }
+
+  .glass-slider-wrapper {
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .glass-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
+
+  .glass-card {
+    flex: 0 0 calc((100% - 60px) / 4);
+    background: #e6f4fa;
+    border-radius: 8px;
+    padding: 28px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 162px;
+    box-sizing: border-box;
+  }
+
+  .glass-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a2a3a;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+    min-height: 48px;
+    flex: 1;
+  }
+
+  .glass-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0055691f;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 20px;
+    flex-shrink: 0;
+    height: 46px;
+  }
+
+  .glass-icon {
+    color: #4a7a8a;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .glass-rating-text {
+    font-size: 0.8rem;
+    color: #2a4a5a;
+    font-weight: 500;
+  }
+
+  .glass-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .glass-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #1a2a3a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .glass-btn:hover {
+    background: #2aa8d4;
+  }
+
+  .glass-btn--faded img {
+    opacity: 0.45;
+  }
+
+  .glass-dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Inactive dot — just a ring/outline */
+  .glass-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: transparent; /* ← hollow */
+    border: 2px solid #1a2a3a; /* ← dark ring */
+    cursor: pointer;
+    padding: 0;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  /* Active dot — solid filled */
+  .glass-dot--active {
+    background: #1a2a3a; /* ← filled */
+    border-color: #1a2a3a;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 900px) {
+    .glass-card {
+      flex: 0 0 calc((100% - 20px) / 2);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .glass-card {
+      flex: 0 0 100%;
+    }
+    .glass-inner {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .glass-section {
+      padding: 40px 0 40px;
+    }
+
+    .glass-inner {
+      padding: 0 16px;
+    }
+
+    .glass-heading h2 {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    .glass-heading-line {
+      max-width: 200px;
+    }
+
+    .glass-card {
+      flex: 0 0 calc((100% - 16px) / 2);  /* ← 2 cards visible */
+    }
+
+    .glass-card-title {
+      font-size: 14px;
+      min-height: 40px;
+    }
+
+    .glass-card-rating {
+      padding: 6px 8px;
+      height: 38px;
+    }
+
+    .glass-rating-text {
+      font-size: 0.7rem;
+    }
+
+    .glass-btn {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .glass-heading h2 {
+      font-size: 24px;
+    }
+
+    .glass-inner {
+      padding: 0 12px;
+    }
+
+    .glass-card {
+      flex: 0 0 calc((100% - 12px) / 2);
+    }
+
+    .glass-card-title {
+      font-size: 13px;
+    }
+
+    .glass-rating-text {
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (max-width: 325px) {
+    .glass-heading h2 {
+      font-size: 20px;
+    }
+
+    .glass-inner {
+      padding: 0 10px;
+    }
+
+    .glass-card {
+      flex: 0 0 calc((100% - 10px) / 2);
+    }
+
+    .glass-card-title {
+      font-size: 12px;
+    }
+
+    .glass-card-rating {
+      padding: 4px 6px;
+      height: 34px;
+    }
+
+    .glass-rating-text {
+      font-size: 0.6rem;
+    }
+
+    .glass-btn {
+      width: 32px;
+      height: 32px;
+    }
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+interface Breadcrumb {
+  label: string;
+  href: string;
+}
+interface Props {
+  title: string;
+  highlight?: string;
+  image: string;
+  breadcrumbs?: Breadcrumb[];
+}
+const { title, highlight, image, breadcrumbs = [] } = Astro.props;
+---
+
+<section
+  class="relative w-full flex items-center justify-center overflow-hidden banner-section"
+  style={`height: 420px; background-image: url('${image}'); background-size: cover;`}
+>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0" style="background: rgba(0,0,0,0.38);"></div>
+
+  <!-- Teal gradient at bottom -->
+  <div
+    class="absolute bottom-0 left-0 right-0"
+    style="height: 180px; background: linear-gradient(to top, #003946 0%, transparent 100%);"
+  >
+  </div>
+
+  <!-- Centered title -->
+  <div class="heading relative z-10 text-center text-white px-6">
+    <h1 class="text-4xl md:text-5xl drop-shadow-lg mb-5">
+      <span style="font-weight: 700; font-family: 'Playfair Display', serif;"
+        >{title}</span
+      >
+      {
+        highlight && (
+          <span style="font-weight: 300; font-family: 'Helvetica Neue', sans-serif;">
+            {" "}
+            {highlight}
+          </span>
+        )
+      }
+    </h1>
+    <!-- Decorative line -->
+    <div class="decorativeline"
+      style="max-width: 470px; max-width: 90vw; height: 1px; background: rgba(255,255,255,0.55); margin: 0 auto;"
+    >
+    </div>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+{
+  breadcrumbs.length > 0 && (
+  <!-- Breadcrumb Strip -->
+<nav class="bg-white py-3 pl-4">
+  <div style="max-width: 1170px; margin: 0 auto;">
+    <ol class="flex items-center gap-2 text-sm">
+      {breadcrumbs.map((crumb, i) => (
+        <li class="flex items-center gap-2">
+          {i < breadcrumbs.length - 1 ? (
+            <a href={crumb.href} class="text-gray-400 hover:text-[var(--color-blue)] transition-colors">
+              {crumb.label}
+            </a>
+          ) : (
+            <span class="text-[var(--color-green)]">{crumb.label}</span>
+          )}
+          {i < breadcrumbs.length - 1 && <span class="text-gray-300">|</span>}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+  )
+}
+
+<style>
+  .banner-section {
+    background-position: left center;  /* desktop */
+  }
+
+  @media (max-width: 425px) {
+    .banner-section {
+      background-position: 30% center;  /* ← shows person on left */
+      height: 300px !important;
+    }
+
+    .decorativeline {
+      max-width: 150px !important;
+    }
+
+    .heading h1{
+      padding-top: 102px;
+      font-size: 34px;
+    }
+    
+  }
+
+  @media (max-width: 375px) {
+    .banner-section {
+      background-position: 25% center;
+      height: 260px !important;
+    }
+  }
+
+  @media (max-width: 325px) {
+    .banner-section {
+      background-position: 20% center;
+      height: 220px !important;
+    }
+  }
+</style>

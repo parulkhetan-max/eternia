@@ -1,0 +1,195 @@
+---
+const faqs = [
+  {
+    question: "How much noise do Eternia windows & doors block?",
+    answer:
+      "Eternia's engineered sound-insulating windows & doors can reduce external noise by up to 35 dB, depending on your location, glass type, and glazing options. This makes them ideal for homes near busy roads, markets, or high-traffic zones.",
+  },
+  {
+    question:
+      "Are Eternia noise-cancelling windows & doors suitable for Indian conditions?",
+    answer:
+      "Yes, Eternia windows and doors are specifically designed and tested for Indian climatic conditions, including high humidity, dust, and extreme temperatures.",
+  },
+  {
+    question: "How long does a window & door installation take?",
+    answer:
+      "Installation time varies depending on the size and complexity of the project. Typically, a standard home installation takes 2–5 days.",
+  },
+  {
+    question: "What kind of warranty does Eternia offer?",
+    answer:
+      "Eternia offers a comprehensive warranty on its products covering manufacturing defects and performance. Please contact your nearest dealer for specific warranty terms.",
+  },
+  {
+    question:
+      "Can Eternia noise-insulated windows & doors help reduce dust and pollution?",
+    answer:
+      "Yes, the same tight sealing systems that block noise also significantly reduce dust and pollutant infiltration into your home.",
+  },
+  {
+    question: "Do I need special glass for soundproofing?",
+    answer:
+      "For optimal soundproofing, we recommend acoustic laminated or double-glazed glass options, which are available across Eternia's product range.",
+  },
+];
+---
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <!-- Heading -->
+    <div class="faq-heading">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-heading-line"></div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="faq-list" id="faqList">
+      {faqs.map((faq, i) => (
+        <div class={`faq-item ${i === 0 ? 'faq-item--open' : ''}`} data-index={i}>
+          <button class="faq-question" aria-expanded={i === 0 ? "true" : "false"}>
+            <span>{faq.question}</span>
+            <span class="faq-icon">{i === 0 ? '×' : '+'}</span>
+          </button>
+          <div class="faq-answer" style={i === 0 ? "" : "display:none;"}>
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .faq-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 70px 0 60px;
+  }
+
+  .faq-inner {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .faq-heading {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .faq-heading h2 {
+    font-family: 'Helvetica Neue', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #003946;
+    margin-bottom: 14px;
+  }
+
+  .faq-heading-line {
+    max-width: 470px;
+    height: 1.5px;
+    background: #003946;
+    margin: 0 auto;
+  }
+
+  /* Accordion list */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #e0e8eb;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+  }
+
+  .faq-question span:first-child {
+    font-size: 16px;
+    font-weight: 700;
+    color: #003946;
+    line-height: 1.4;
+  }
+
+  .faq-icon {
+    font-size: 1.4rem;
+    color: #003946;
+    flex-shrink: 0;
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  .faq-answer {
+    padding: 0 0 20px 0;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+    color: #003946;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 540px) {
+    .faq-inner {
+      padding: 0 20px;
+    }
+
+    .faq-heading h2 {
+      font-size: 1.6rem;
+    }
+  }
+</style>
+
+<script>
+  function initFaq() {
+    const list = document.getElementById('faqList');
+    if (!list) return;
+
+    const items = Array.from(list.querySelectorAll('.faq-item'));
+
+    items.forEach((item) => {
+      const btn = item.querySelector('.faq-question') as HTMLButtonElement;
+      const answer = item.querySelector('.faq-answer') as HTMLElement;
+      const icon = item.querySelector('.faq-icon') as HTMLElement;
+
+      if (!btn || !answer || !icon) return;
+
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('faq-item--open');
+
+        // Close all
+        items.forEach((el) => {
+          el.classList.remove('faq-item--open');
+          const a = el.querySelector('.faq-answer') as HTMLElement;
+          const ic = el.querySelector('.faq-icon') as HTMLElement;
+          if (a) a.style.display = 'none';
+          if (ic) ic.textContent = '+';
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('faq-item--open');
+          answer.style.display = 'block';
+          icon.textContent = '×';
+        }
+      });
+    });
+  }
+
+  initFaq();
+  document.addEventListener('astro:page-load', initFaq);
+</script>

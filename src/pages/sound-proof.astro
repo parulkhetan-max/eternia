@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/astro/Nav.astro";
+import PageBanner from "../components/astro/PageBanner.astro";
+import NoiseInsulationBenefits from "../components/astro/NoiseInsulationBenefits.astro";
+import WhyChooseEternia from "../components/astro/WhyChooseEternia.astro";
+import GlassSolutions from "../components/astro/GlassSolutions.astro";
+import { SoundProofFeaturesCarousel } from "../components/react/SoundProofFeaturesCarousel";
+import { CustomerTestimonials } from "../components/react/CustomerTestimonials";
+import FAQ from "../components/astro/FAQ.astro";
+import { Footer } from "../components/react/Footer";
+---
+
+<Layout>
+  <Nav />
+
+  <PageBanner
+    title="Noise Insulation"
+    highlight="Windows & Doors"
+    image="/assets/sound-proof-banner.jpg"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Sound Proof", href: "/sound-proof" },
+    ]}
+  />
+
+  <NoiseInsulationBenefits />
+
+  <WhyChooseEternia />
+
+  <GlassSolutions />
+
+  <SoundProofFeaturesCarousel
+    client:load
+    bgImage="/assets/upperbg.jpg"
+    title="Explore the Full Spectrum of Premium Performance"
+    features={[
+      {
+        icon: "/assets/feature1.svg",
+        title: "Secure &\n Burglary Proof",
+        learnMoreLink: "#",
+      },
+      {
+        icon: "/assets/feature-icon4.svg",
+        title: "Storm\n Resistant",
+        learnMoreLink: "#",
+      },
+      {
+        icon: "/assets/feature2.svg",
+        title: "Complete Design\n Freedom",
+        learnMoreLink: "#",
+      },
+      {
+        icon: "/assets/feature-icon3.svg",
+        title: "Rainwater\n Insulation",
+        learnMoreLink: "#",
+      },
+      {
+        icon: "/assets/feature-icon2.svg",
+        title: "Noise\n Insulation",
+        learnMoreLink: "#",
+      },
+      {
+        icon: "/assets/feature-icon1.svg",
+        title: "Energy\n Efficient",
+        learnMoreLink: "#",
+      },
+    ]}
+  />
+  <!-- Trusted by Homeowners — reusing existing CustomerTestimonials -->
+  <CustomerTestimonials
+    client:load
+    title="Trusted by Homeowners Across India"
+    bgImage="/assets/lowerbg.jpg"
+    testimonials={[
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable with brand image and trust of Aditya Birla Group. Absolute windows, Gurgaon is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable with brand image and trust of Aditya Birla Group. Absolute windows, Gurgaon is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable with brand image and trust of Aditya Birla Group. Absolute windows, Gurgaon is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable with brand image and trust of Aditya Birla Group. Absolute windows, Gurgaon is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+      {
+        quote:
+          "Eternia is a good product and very attractive in design and also durable with brand image and trust of Aditya Birla Group. Absolute windows, Gurgaon is very hard working and nice person.",
+        author: "Mr. Vinod Mittal",
+        role: "",
+      },
+    ]}
+    exploreMoreLink="#"
+  />
+  <FAQ />
+
+  <Footer client:load />
+</Layout>
+
+<style is:global>
+  @media (max-width: 425px) {
+    .sp-carousel-title {
+      font-size: 32px !important;
+      line-height: 1.3;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .sp-carousel-title {
+      font-size: 24px !important;
+    }
+  }
+
+  @media (max-width: 325px) {
+    .sp-carousel-title {
+      font-size: 20px !important;
+    }
+  }
+</style>

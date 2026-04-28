@@ -1,0 +1,151 @@
+---
+const benefits = [
+  {
+    image: "/assets/benefit-sleep.jpg",
+    caption: "Undisturbed Sleep, Day and Night",
+  },
+  {
+    image: "/assets/benefit-quiet.jpg",
+    caption: "Quieter Homes Even in Busy Areas",
+  },
+  {
+    image: "/assets/benefit-work.jpg",
+    caption: "Clearer Calls and Focused Work-from-Home",
+  },
+  {
+    image: "/assets/benefit-indoor.jpg",
+    caption: "A Calmer, Healthier Indoor Environment",
+  },
+];
+---
+
+<section class="benefits-section">
+  <div class="benefits-inner px-4">
+    <!-- Section Title -->
+    <div class="benefits-heading">
+      <h2>How Noise Insulation Improves Everyday Living</h2>
+      <div class="benefits-heading-line"></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="benefits-list">
+      {benefits.map((item, i) => (
+        <div 
+          class="benefit-card" 
+          style={`top: 250px; z-index: ${i + 1}; margin-bottom: ${i === benefits.length - 1 ? '0' : '271px'};`}
+        >
+          <img src={item.image} alt={item.caption} />
+          <div class="benefit-overlay">
+            <p>{item.caption}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits-section {
+    width: 100%;
+    background: #fff;
+    padding: 60px 0 50px 0;  /* ← 50px bottom padding here */
+  }
+
+  /* This inner wrapper is what constrains the width */
+  .benefits-inner {
+    max-width: 1170px;   /* same as breadcrumb container */
+    margin: 0 auto;
+    /* padding: 0 40px;     same as breadcrumb padding */
+    box-sizing: border-box;
+  }
+
+
+  .benefits-heading {
+    text-align: center;
+    margin-bottom: 36px;
+    position: sticky;
+    top: 140px;  
+  }
+
+  .benefits-heading h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #1a4a5a;
+    margin-bottom: 10px;
+    line-height: 120%;
+  }
+
+  .benefits-heading-line {
+    max-width: 470px;
+    height: 2px;
+    background: #003946;
+    margin: 0 auto;
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .benefit-card {
+    position: sticky;
+    width: 100%;
+    height: 448px;           /* fixed height like Figma, not aspect-ratio */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #dde4e6;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 271px;
+  }
+
+  .benefit-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .benefit-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 160px 70px 30px 40px;
+    background: linear-gradient(to top, rgba(0, 57, 70, 0.9) 0%, transparent 100%);
+  }
+
+  .benefit-overlay p {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+
+  @media (max-width: 425px) {
+    .benefits-heading{
+      top: 90px;
+    }
+    .benefits-heading h2{
+      font-size: 32px;
+    }
+    .benefit-card{
+      top: 210px !important;
+    }
+
+    .benefits-heading-line{
+      max-width: 150px;
+    }
+    .benefit-overlay p{
+      font-size: 20px;
+    }
+    .benefits-section{
+      padding: 40px 0 25px 0 !important;
+    }
+
+
+  }
+</style>

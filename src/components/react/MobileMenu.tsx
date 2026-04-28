@@ -109,6 +109,13 @@ export function MobileMenu(): React.ReactElement {
                 >
                   Aluminium Windows
                 </a>
+                <a
+                  href="/sound-proof"
+                  className="text-[var(--color-green)] transition text-sm"
+                  onClick={closeMenu}
+                >
+                  Sound Proof Windows
+                </a>
               </div>
             </div>
           </div>
