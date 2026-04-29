@@ -14,7 +14,8 @@
   .main_image_big {
     max-width: 100%;
   }
-  nav .container-flex{
+
+  nav .container-flex {
     padding-inline: 0;
   }
 }
@@ -38,9 +39,10 @@
   .crafted-iconic .indicators {
     display: none;
   }
-  .modern-living astro-island > div{
-    padding-top:25px !important;
-}
+
+  .modern-living astro-island>div {
+    padding-top: 25px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -58,8 +60,8 @@
   .innovation_box_main {
     transform: scale(.75);
   }
-  .home-section-c{
+
+  .home-section-c {
     height: 727px;
   }
 }
-

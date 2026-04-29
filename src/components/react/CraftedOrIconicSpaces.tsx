@@ -85,8 +85,8 @@ export function CraftedOrIconicSpaces({
 
   return (
     <div className="py-[50px] sm:py-25 bg-white"
-    style={{ backgroundImage: "url('/assets/iconicBG.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-      <div className="container-flex" style = {{paddingRight: "0px !important"}}>
+      style={{ backgroundImage: "url('/assets/iconicBG.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+      <div className="container-flex fixedstyle">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-[var(--color-green)]">
@@ -109,7 +109,7 @@ export function CraftedOrIconicSpaces({
               <CarouselItem
                 key={index}
                 className="basis-[calc(100%*2/3+4rem)] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 lg:basis-[calc(25%-0.75rem)] relative rounded-lg overflow-hidden group"
-                // className="pl-4 relative rounded-lg"
+              // className="pl-4 relative rounded-lg"
               >
                 <div className="h-full overflow-hidden rounded-lg">
                   {/* Image */}
@@ -143,8 +143,8 @@ export function CraftedOrIconicSpaces({
                         </p>
                         {space.link && (
                           <div className="flex items-center gap-2 mt-2 read-more">
-                              <a href={space.link} className="text-sm text-white underline">Read more</a> 
-                              <img src="/assets/arrow.svg" alt="" />
+                            <a href={space.link} className="text-sm text-white underline">Read more</a>
+                            <img src="/assets/arrow.svg" alt="" />
                           </div>
                         )}
                       </div>
@@ -165,11 +165,10 @@ export function CraftedOrIconicSpaces({
                 <button
                   key={index}
                   onClick={() => api?.scrollTo(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-white)] ${
-                    index === current
+                  className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-white)] ${index === current
                       ? "bg-[var(--color-white)]"
                       : "bg-transparent"
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}

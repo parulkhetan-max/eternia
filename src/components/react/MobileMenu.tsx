@@ -43,9 +43,8 @@ export function MobileMenu(): React.ReactElement {
 
       {/* Offcanvas Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-full bg-white z-50 shadow-2xl transition-transform duration-600 ease-in-out overflow-y-auto ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-screen w-full bg-white z-50 shadow-2xl transition-transform duration-600 ease-in-out overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Menu Header */}
         <div className="flex items-center justify-end px-6 mt-4">
@@ -84,9 +83,8 @@ export function MobileMenu(): React.ReactElement {
                 viewBox="0 0 12 7"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`transition-transform duration-300 mt-1 ${
-                  openSubmenu === "products" ? "rotate-180" : ""
-                }`}
+                className={`transition-transform duration-300 mt-1 ${openSubmenu === "products" ? "rotate-180" : ""
+                  }`}
               >
                 <path
                   fillRule="evenodd"
@@ -97,9 +95,8 @@ export function MobileMenu(): React.ReactElement {
               </svg>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubmenu === "products" ? "max-h-40" : "max-h-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${openSubmenu === "products" ? "max-h-40" : "max-h-0"
+                }`}
             >
               <div className="mt-2 flex flex-col gap-2">
                 <a
@@ -108,13 +105,6 @@ export function MobileMenu(): React.ReactElement {
                   onClick={closeMenu}
                 >
                   Aluminium Windows
-                </a>
-                <a
-                  href="/sound-proof"
-                  className="text-[var(--color-green)] transition text-sm"
-                  onClick={closeMenu}
-                >
-                  Sound Proof Windows
                 </a>
               </div>
             </div>
@@ -133,9 +123,8 @@ export function MobileMenu(): React.ReactElement {
                 viewBox="0 0 12 7"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`transition-transform duration-300 mt-1 ${
-                  openSubmenu === "why" ? "rotate-180" : ""
-                }`}
+                className={`transition-transform duration-300 mt-1 ${openSubmenu === "why" ? "rotate-180" : ""
+                  }`}
               >
                 <path
                   fillRule="evenodd"
@@ -146,9 +135,8 @@ export function MobileMenu(): React.ReactElement {
               </svg>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubmenu === "why" ? "max-h-40" : "max-h-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${openSubmenu === "why" ? "max-h-40" : "max-h-0"
+                }`}
             >
               <div className="mt-2 flex flex-col gap-2">
                 <a

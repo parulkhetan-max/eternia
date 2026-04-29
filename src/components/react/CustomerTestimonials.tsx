@@ -50,17 +50,17 @@ export function CustomerTestimonials({
       style={
         bgImage
           ? {
-              backgroundImage: `url('${bgImage}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "top",
-            }
+            backgroundImage: `url('${bgImage}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "top",
+          }
           : {
-              background: "var(--color-green)",
-            }
+            background: "var(--color-green)",
+          }
       }
     >
       {/* Header */}
-      <div className="text-center mb-8 sm:mb-16">
+      <div className="text-center text-centernew mb-8 sm:mb-16">
         <h2 className="mb-6 text-white">{title}</h2>
         <hr className="border-white mb-4 w-[25%] mx-auto" />
       </div>
@@ -82,7 +82,7 @@ export function CustomerTestimonials({
             setApi={setApi}
             className="w-full"
           >
-            
+
             <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-3">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem
@@ -135,11 +135,10 @@ export function CustomerTestimonials({
                   <button
                     key={index}
                     onClick={() => api?.scrollTo(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-white)] ${
-                      index + 1 === current
+                    className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-white)] ${index + 1 === current
                         ? "bg-[var(--color-white)]"
                         : "bg-transparent"
-                    }`}
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}

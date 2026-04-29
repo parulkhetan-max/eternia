@@ -157,18 +157,17 @@ export function FeaturesCarouselReact({
           {/* Navigation with Indicators */}
           <div className="flex justify-center items-center gap-4 mt-8">
             <CarouselPrevious className="relative static translate-y-0 bg-white rounded-full border-transparent shadow-md text-[var(--color-green)]" />
-            
+
             {/* Indicators */}
             <div className="flex gap-2">
               {Array.from({ length: count }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => api?.scrollTo(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-green)] ${
-                    index === current
+                  className={`w-3 h-3 rounded-full transition-all duration-300 border border-[var(--color-green)] ${index === current
                       ? "bg-[var(--color-green)]"
                       : "bg-transparent border-[var(--color-green)]"
-                  }`} 
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}

@@ -51,48 +51,56 @@
 .modern-living .indicators {
     display: none;
 }
-.modern-living .crafted-iconic-content{
+
+.modern-living .crafted-iconic-content {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
 .crafted-iconic .crafted-iconic-content {
     margin: 16px;
 }
-.modern-living astro-island > div{
-    padding-top:50px !important;
+
+.modern-living astro-island>div {
+    padding-top: 50px !important;
 }
+
 /* Innovation Meets Precision Styles */
-.innovation_box_main{
-  padding-top: 40px;
+.innovation_box_main {
+    padding-top: 40px;
     width: 100%;
     max-width: 430px;
     margin: 0 auto;
 }
-.home-section-c{
-  background-image: url('/assets/innovationBG.jpg');
+
+.home-section-c {
+    background-image: url('/assets/innovationBG.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.home-section-c-big-image-box-mob{
-  max-width: 318px;
+
+.home-section-c-big-image-box-mob {
+    max-width: 318px;
     width: 100%;
     position: relative;
     margin: 0 auto;
 }
+
 /* .home-section-c-big-image-box-mob .image_floting-box:nth-child(5){
     display: none;
 } */
 .main_image_big {
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
-  width: 100%;
-  height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
+
 .home-section-c-big-image-box {
-  margin: 90px 0;
-  width: 100%;
-  max-width: 1256px;
-  position: relative;
+    margin: 90px 0;
+    width: 100%;
+    max-width: 1256px;
+    position: relative;
 }

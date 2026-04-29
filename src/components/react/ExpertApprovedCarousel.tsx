@@ -277,8 +277,8 @@ export function ExpertApprovedCarousel({
                                     key={index}
                                     onClick={() => goToSlide(index)}
                                     className={`transition-all duration-300 rounded-full ${index === currentIndex
-                                            ? "bg-[var(--color-green)] w-3 h-3"
-                                            : "bg-transparent border border-[var(--color-green)] w-2 h-2"
+                                        ? "bg-[var(--color-green)] w-3 h-3"
+                                        : "bg-transparent border border-[var(--color-green)] w-2 h-2"
                                         }`}
                                     aria-label={`Go to slide ${index + 1}`}
                                     aria-current={index === currentIndex ? "true" : "false"}

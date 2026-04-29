@@ -74,16 +74,14 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)]"
             >
               <p className="font-bold text-[var(--color-green)]">Products</p>
-              <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.products ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.products ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 md:mt-0 mt-2 ${
-                openSections.products ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 md:mt-0 mt-2 ${openSections.products ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -113,16 +111,14 @@ export function Footer() {
               className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">By type</p>
-              <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.byType ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.byType ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 md:mt-0 mt-2 ${
-                openSections.byType ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 md:mt-0 mt-2 ${openSections.byType ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -139,19 +135,17 @@ export function Footer() {
             {/* By Room Section */}
             <button
               onClick={() => toggleSection("byRoom")}
-             className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
+              className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">By room</p>
-              <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.byRoom ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.byRoom ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${
-                openSections.byRoom ? "max-h-96" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${openSections.byRoom ? "max-h-96" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -183,16 +177,14 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Why Eternia</p>
-               <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.whyEternia ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.whyEternia ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${
-                openSections.whyEternia ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${openSections.whyEternia ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -222,16 +214,14 @@ export function Footer() {
               className="md:mt-4 w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Find the right window</p>
-               <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.findWindow ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.findWindow ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${
-                openSections.findWindow ? "max-h-96" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${openSections.findWindow ? "max-h-96" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -248,16 +238,14 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Features</p>
-              <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.features ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.features ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${
-                openSections.features ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${openSections.features ? "max-h-96 mb-4" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -309,16 +297,14 @@ export function Footer() {
               className="w-full md:pointer-events-none md:cursor-default flex items-center justify-between md:border-0 border-b border-[var(--color-green)] pt-1"
             >
               <p className="font-bold text-[var(--color-green)]">Contact & Support</p>
-               <img src="/assets/downArrow.svg" alt="" 
-              className={`md:hidden w-3 h-3 transition-transform mb-4 ${
-                  openSections.contact ? "rotate-180" : ""
-                }`}/>
+              <img src="/assets/downArrow.svg" alt=""
+                className={`md:hidden w-3 h-3 transition-transform mb-4 ${openSections.contact ? "rotate-180" : ""
+                  }`} />
             </button>
 
             <ul
-              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${
-                openSections.contact ? "max-h-96" : "max-h-0 md:max-h-96"
-              }`}
+              className={`space-y-2 overflow-hidden transition-all duration-300 mt-2 md:mt-0 ${openSections.contact ? "max-h-96" : "max-h-0 md:max-h-96"
+                }`}
             >
               <li>
                 <a href="#" className="text-[var(--color-green)] hover:text-[var(--color-green)] transition-colors text-sm">
@@ -348,8 +334,8 @@ export function Footer() {
       <div className="bg-[var(--color-green)] text-white py-5 hidden sm:block">
         <div className="container-flex text-xs text-center leading-relaxed">
           <p className="mb-0">
-            *Eternia™, Duranium™ and WiWA© are proprietary to Hindalco Industries Limited. Hindalco Industries Limited has a patent filed right for Duranium alloy. 
-            Nothing contained here shall be construed as conferring any license or right under a Hindalco trademark, copyright or patent. Images on the website are 
+            *Eternia™, Duranium™ and WiWA© are proprietary to Hindalco Industries Limited. Hindalco Industries Limited has a patent filed right for Duranium alloy.
+            Nothing contained here shall be construed as conferring any license or right under a Hindalco trademark, copyright or patent. Images on the website are
             indicative. The final product may be different from the images displayed
           </p>
         </div>

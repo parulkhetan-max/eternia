@@ -84,7 +84,7 @@ export function WhyChooseEterniaCarousel({
     <div className="py-[25px] sm:py-[50px]"
       style={{ backgroundImage: "url('/assets/whyBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
-      <div className="container-flex" style = {{paddingRight: "0px !important"}}>
+      <div className="container-flex fixedstyle">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="mb-6 text-white">
@@ -106,7 +106,7 @@ export function WhyChooseEterniaCarousel({
             {items.map((item, index) => (
               <CarouselItem
                 key={index}
-                className="pl-4 basis-[310px]"
+                className="pl-4 basis-[310px] sm:basis-1/2 lg:basis-1/4"
               >
                 <div
                   className={`h-full p-6 rounded-lg border border-white/30 transition-all duration-300 hover:border-white/60`}
@@ -118,7 +118,7 @@ export function WhyChooseEterniaCarousel({
                 >
                   {/* Icon */}
                   <div className={`mb-2 flex items-center justify-start`}>
-                    <img src={item.icon} alt={item.title}  />
+                    <img src={item.icon} alt={item.title} />
                   </div>
                   {/* Subtitle */}
                   <p className="text-sm text-white/80 mb-4">
@@ -126,7 +126,7 @@ export function WhyChooseEterniaCarousel({
                   </p>
 
                   {/* Divider */}
-                    <div>
+                  <div>
                     <img src="/assets/hr.png" alt="hr" className="mb-4 w-full opacity-50" />
                   </div>
 
@@ -152,22 +152,21 @@ export function WhyChooseEterniaCarousel({
           {count > 0 && (
             <div className="flex justify-center items-center gap-4 mt-10 md:hidden">
               <CarouselPrevious className="relative static translate-y-0 bg-white text-[var(--color-green)] border-white rounded-full hover:bg-white/30 transition-colors" />
-              
+
               <div className="flex justify-center items-center gap-2">
                 {Array.from({ length: count }).map((_, index) => (
                   <button
                     key={index}
                     onClick={() => api?.scrollTo(index)}
-                    className={`rounded-full transition-all duration-300 ${
-                      index === current
+                    className={`rounded-full transition-all duration-300 ${index === current
                         ? "bg-white w-3 h-3"
                         : "bg-transparent w-2 h-2 border border-white"
-                    }`}
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
               </div>
-              
+
               <CarouselNext className="relative static translate-y-0 bg-white text-[var(--color-green)] border-white rounded-full hover:bg-white/30 transition-colors" />
             </div>
           )}

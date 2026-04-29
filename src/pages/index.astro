@@ -541,7 +541,7 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
   <Footer client:load />
 </Layout>
 
-<style>
+<style is:global>
   @media (max-width: 768px) {
     .innovation-meets-precision-section .container-flex {
       padding-left: 16px !important;
@@ -588,4 +588,19 @@ import { InnovationMeetsPrecision } from "../components/react/InnovationMeetsPre
       padding-right: 16px !important;
     }
   }
+
+  @media (max-width: 425px) {
+  .fixedstyle {
+    padding-right: 0 !important;
+  }
+}
+
+  @media (max-width: 425px) {
+    .text-centernew{
+    padding-left: 44px !important;
+    padding-right: 42px !important;
+  }
+}
+
+
 </style>

@@ -99,7 +99,7 @@ export function InnovationMeetsPrecision({
     useEffect(() => {
         setIsMounted(true)
         setScreenWidth(window.innerWidth)
-        
+
         const handleResize = () => setScreenWidth(window.innerWidth)
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
@@ -164,7 +164,7 @@ export function InnovationMeetsPrecision({
                                             ...(f.width && { width: f.width }),
                                             ...pos,
                                         } as React.CSSProperties}
-                                      
+
                                     >
                                         <h6 className="floting-title text-sm font-medium text-gray-900 mb-0">
                                             {f.label}

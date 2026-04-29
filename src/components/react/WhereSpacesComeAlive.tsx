@@ -31,7 +31,7 @@ export function WhereSpacesComeAlive({
   }, [position])
   return (
     <div className="pt-[25px] sm:pt-[50px] bg-white"
-    style={{ backgroundImage: "url('/assets/innovationBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      style={{ backgroundImage: "url('/assets/innovationBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="container-flex">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-16">
